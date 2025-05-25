@@ -20,7 +20,8 @@ export default function Home() {
           </p>
           <CustomButton />
         </div>
-        <div className="flex basis-1/2 justify-end"></div>
+        <div className="flex basis-1/2 border-2 border-l-0 border-green-100">
+        </div>
       </div>
     </section>
   );

@@ -22,7 +22,7 @@ const RotatingArrowIcon: React.FC<RotatingArrowIconProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`relative inline-flex items-center justify-center group cursor-pointer transition-all duration-200 ease-in-out ${className}`}
+      className={`relative inline-flex items-center justify-center cursor-pointer transition-all duration-200 ease-in-out ${className}`}
       style={{ width: size, height: size }}
     >
       {/* Círculo con apertura - Este es el que rota */}
@@ -38,7 +38,7 @@ const RotatingArrowIcon: React.FC<RotatingArrowIconProps> = ({
           stroke="currentColor"
           strokeWidth=".5"
           strokeLinecap="round"
-          className="text-green-500 group-hover:text-green-200 transition-colors duration-200 ease-in-out"
+          className="group-hover:text-green-200 transition-colors duration-200 ease-in-out"
         />
       </svg>
 
@@ -56,7 +56,7 @@ const RotatingArrowIcon: React.FC<RotatingArrowIconProps> = ({
           strokeWidth="1"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-green-500 group-hover:text-green-200 transition-colors duration-200 ease-in-out"
+          className="group-hover:text-green-200 transition-colors duration-200 ease-in-out"
         />
       </svg>
     </button>
