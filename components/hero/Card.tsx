@@ -1,5 +1,6 @@
 import Image from "next/image";
 import cerdo from "@/assets/cerdo.webp";
+import GreenBarcode from "./GreenBarcode";
 
 export const Card = () => {
   return (
@@ -15,10 +16,12 @@ export const Card = () => {
         <div className="flex flex-col">
           <h3 className="text-xl text-green-300/80">SARAH FOXX</h3>
           <h4 className="text-lg text-green-300/50">OWNER, CEO</h4>
-          <p className="text-md text-green-300/20 mt-5">15-26669-890</p>
+          <p className="text-md text-green-300/20 mt-5 tracking-widest">
+            15-26669-890
+          </p>
         </div>
       </div>
-      <div className="border space-y-2">
+      <div className="">
         <h2 className="text-3xl flex items-center text-green-300 mb-3">
           <svg
             fill="#6e9e8f30"
@@ -57,17 +60,24 @@ export const Card = () => {
           </svg>
           Sunnyside Up Day Care
         </h2>
-        <div className="flex gap-1">
-          <div className="h-2 bg-green-300/10 rounded-full w-[35%]" />
-          <div className="h-2 bg-green-300/10 rounded-full w-[15%]" />
-          <div className="h-2 bg-green-300/10 rounded-full size-2" />
-          <div className="h-2 bg-green-300/10 rounded-full size-2" />
-          <div className="h-2 bg-green-300/10 rounded-full w-[15%]" />
-        </div>
-        <div className="flex gap-1">
-          <div className="h-2 bg-green-300/10 rounded-full w-[15%]" />
-          <div className="h-2 bg-green-300/10 rounded-full w-[30%]" />
-          <div className="h-2 bg-green-300/10 rounded-full w-[15%]" />
+        <div className="flex">
+          <div className="space-y-1 w-full">
+            <div className="flex gap-1">
+              <div className="h-2 bg-green-300/10 rounded-full w-[35%]" />
+              <div className="h-2 bg-green-300/10 rounded-full w-[15%]" />
+              <div className="h-2 bg-green-300/10 rounded-full size-2" />
+              <div className="h-2 bg-green-300/10 rounded-full size-2" />
+              <div className="h-2 bg-green-300/10 rounded-full w-[15%]" />
+            </div>
+            <div className="flex gap-1">
+              <div className="h-2 bg-green-300/10 rounded-full w-[15%]" />
+              <div className="h-2 bg-green-300/10 rounded-full w-[30%]" />
+              <div className="h-2 bg-green-300/10 rounded-full w-[15%]" />
+            </div>
+          </div>
+          <div id="barcode" className="ml-auto">
+            <GreenBarcode value="123" width={60} height={28} className="" />
+          </div>
         </div>
       </div>
     </div>
