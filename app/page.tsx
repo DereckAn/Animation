@@ -2,6 +2,7 @@
 
 import CustomButton from "@/components/hero/CustomButton";
 import TitleAnimation from "@/components/hero/TitleAnimation";
+import { Card } from "@/components/hero/Card";
 
 export default function Home() {
   const handleQuoteClick = () => {
@@ -20,7 +21,8 @@ export default function Home() {
           </p>
           <CustomButton />
         </div>
-        <div className="flex basis-1/2 border-2 border-l-0 border-green-100">
+        <div className="flex basis-1/2 border-2 border-l-0 border-green-100 p-10">
+          <Card />
         </div>
       </div>
     </section>
