@@ -5,10 +5,6 @@ import TitleAnimation from "@/components/hero/TitleAnimation";
 import { Card } from "@/components/hero/Card";
 
 export default function Home() {
-  const handleQuoteClick = () => {
-    console.log("Solicitando cotización personalizada...");
-    // Aquí iría tu lógica
-  };
   return (
     <section className="w-full h-screen flex flex-col justify-center items-center p-5 ">
       <TitleAnimation />

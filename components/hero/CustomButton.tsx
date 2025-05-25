@@ -3,20 +3,23 @@ import RotatingArrowIcon from "./RotatingArrowIcon";
 
 const CustomButton: React.FC = () => {
   return (
-    <div className="flex items-center justify-center group w-fit">
+    <div className="flex items-center justify-center group w-fit relative ">
       <button
         className="flex items-center p-2 px-5 cursor-pointer text-green-500 group-hover:text-green-200
       border border-green-500 group-hover:border-green-200 transition-all
-        duration-200 ease-in-out rounded-full w-fit"
+        duration-700 ease-in-out rounded-full w-fit
+        group-hover:translate-x-14 transform"
         onClick={() => {}}
       >
         <div className="">Get a Custom Quote Today</div>
       </button>
-      <RotatingArrowIcon 
-        direction="right" 
-        size={50} 
-        onClick={() => {}} 
-        className="text-green-500 group-hover:text-green-200"
+      <RotatingArrowIcon
+        direction="right"
+        size={50}
+        onClick={() => {}}
+        className="text-green-500 group-hover:text-green-200 transition-all
+        duration-700 ease-in-out
+        group-hover:-translate-x-60 transform"
       />
     </div>
   );

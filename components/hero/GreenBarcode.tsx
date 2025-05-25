@@ -4,14 +4,12 @@ interface GreenBarcodeProps {
   value?: string;
   width?: number;
   height?: number;
-  className?: string;
 }
 
 const GreenBarcode: React.FC<GreenBarcodeProps> = ({
   value = "152666989",
   width = 90,
   height = 28,
-  className = "",
 }) => {
   // Generate barcode pattern based on value
   const generateBarcodePattern = (val: string) => {
@@ -24,9 +22,9 @@ const GreenBarcode: React.FC<GreenBarcodeProps> = ({
       // ... etc
     ];
 
-    let result = [3, 1, 1]; // Start pattern
+    const result = [3, 1, 1]; // Start pattern
 
-    for (let char of val) {
+    for (const char of val) {
       const digit = parseInt(char) || 0;
       result.push(...patterns[digit % 9]);
     }

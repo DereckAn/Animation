@@ -76,7 +76,7 @@ export const Card = () => {
             </div>
           </div>
           <div id="barcode" className="ml-auto">
-            <GreenBarcode value="123" width={60} height={28} className="" />
+            <GreenBarcode value="123" width={60} height={28} />
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 
 interface CarouselCard {
@@ -176,7 +177,7 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
               >
                 {card.image && (
                   <div className="h-48 bg-gray-200 overflow-hidden">
-                    <img
+                    <Image
                       src={card.image}
                       alt={card.title}
                       className="w-full h-full object-cover"
