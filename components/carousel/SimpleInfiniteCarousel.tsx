@@ -10,6 +10,7 @@ interface SimpleInfiniteCarouselProps {
   autoPlay?: boolean;
   interval?: number;
   className?: string;
+  peekAmount?: number;
 }
 
 const SimpleInfiniteCarousel: React.FC<SimpleInfiniteCarouselProps> = ({
@@ -17,6 +18,7 @@ const SimpleInfiniteCarousel: React.FC<SimpleInfiniteCarouselProps> = ({
   autoPlay = true,
   interval = 3000,
   className = "",
+  peekAmount = 60,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -97,18 +99,34 @@ const SimpleInfiniteCarousel: React.FC<SimpleInfiniteCarouselProps> = ({
     }
   }, [currentIndex, isTransitioning, cards.length, extendedCards.length]);
 
+  const cardWidth = 100 - peekAmount / 4;
+  const translateOffset = peekAmount / 2;
+
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div className={`relative overflow-hidden ${className}`} style={{
+      paddingLeft: `${peekAmount / 2}px`,
+      paddingRight: `${peekAmount / 2}px`,
+    }}>
       <div
         ref={containerRef}
         className="flex transition-transform duration-500 ease-in-out"
         style={{
-          transform: `translateX(-${currentIndex * 100}%)`,
+          transform: `translateX(calc(-${currentIndex * cardWidth}% + ${translateOffset}px))`,
         }}
       >
         {extendedCards.map((card, index) => (
-          <div key={`${card.id}-${index}`} className="w-full flex-shrink-0">
-            {card.content}
+          <div 
+            key={`${card.id}-${index}`} 
+            className="flex-shrink-0 px-1"
+            style={{ width: `${cardWidth}%` }}
+          >
+            <div className={`transition-all duration-300 ${
+              index === currentIndex 
+                ? "scale-100 opacity-100" 
+                : "scale-95 opacity-60 hover:opacity-80"
+            }`}>
+              {card.content}
+            </div>
           </div>
         ))}
       </div>
@@ -116,7 +134,7 @@ const SimpleInfiniteCarousel: React.FC<SimpleInfiniteCarouselProps> = ({
       {/* Navigation buttons */}
       <button
         onClick={goToPrev}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
+        className="absolute left-1 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors z-10"
         disabled={isTransitioning}
       >
         ←
@@ -124,7 +142,7 @@ const SimpleInfiniteCarousel: React.FC<SimpleInfiniteCarouselProps> = ({
       
       <button
         onClick={goToNext}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
+        className="absolute right-1 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors z-10"
         disabled={isTransitioning}
       >
         →

@@ -1,10 +1,10 @@
-import React from 'react';
-import SimpleInfiniteCarousel from './SimpleInfiniteCarousel';
+import React from "react";
+import SimpleInfiniteCarousel from "./SimpleInfiniteCarousel";
 
 const SimpleCarouselExample: React.FC = () => {
   const productCards = [
     {
-      id: '1',
+      id: "1",
       content: (
         <div className="bg-gradient-to-br from-blue-500 to-blue-700 h-64 flex items-center justify-center text-white rounded-lg mx-2">
           <div className="text-center">
@@ -13,10 +13,10 @@ const SimpleCarouselExample: React.FC = () => {
             <div className="mt-4 text-3xl font-bold">$29/mo</div>
           </div>
         </div>
-      )
+      ),
     },
     {
-      id: '2',
+      id: "2",
       content: (
         <div className="bg-gradient-to-br from-green-500 to-green-700 h-64 flex items-center justify-center text-white rounded-lg mx-2">
           <div className="text-center">
@@ -25,10 +25,10 @@ const SimpleCarouselExample: React.FC = () => {
             <div className="mt-4 text-3xl font-bold">$59/mo</div>
           </div>
         </div>
-      )
+      ),
     },
     {
-      id: '3',
+      id: "3",
       content: (
         <div className="bg-gradient-to-br from-purple-500 to-purple-700 h-64 flex items-center justify-center text-white rounded-lg mx-2">
           <div className="text-center">
@@ -37,10 +37,10 @@ const SimpleCarouselExample: React.FC = () => {
             <div className="mt-4 text-3xl font-bold">Custom</div>
           </div>
         </div>
-      )
+      ),
     },
     {
-      id: '4',
+      id: "4",
       content: (
         <div className="bg-gradient-to-br from-orange-500 to-red-600 h-64 flex items-center justify-center text-white rounded-lg mx-2">
           <div className="text-center">
@@ -49,13 +49,13 @@ const SimpleCarouselExample: React.FC = () => {
             <div className="mt-4 text-3xl font-bold">$9/mo</div>
           </div>
         </div>
-      )
-    }
+      ),
+    },
   ];
 
   const testimonialCards = [
     {
-      id: '1',
+      id: "1",
       content: (
         <div className="bg-white p-8 rounded-xl shadow-lg mx-4 h-48">
           <div className="flex items-center mb-4">
@@ -67,15 +67,15 @@ const SimpleCarouselExample: React.FC = () => {
               <p className="text-gray-600 text-sm">CEO, TechCorp</p>
             </div>
           </div>
-          <p
- className="text-gray-700 italic">
-            "This service completely transformed our workflow. Highly recommended!"
+          <p className="text-gray-700 italic">
+            `&quot;`This service completely transformed our workflow. Highly
+            recommended!`&quot;`
           </p>
         </div>
-      )
+      ),
     },
     {
-      id: '2',
+      id: "2",
       content: (
         <div className="bg-white p-8 rounded-xl shadow-lg mx-4 h-48">
           <div className="flex items-center mb-4">
@@ -88,13 +88,14 @@ const SimpleCarouselExample: React.FC = () => {
             </div>
           </div>
           <p className="text-gray-700 italic">
-            "Amazing results in just a few weeks. The team is incredible!"
+            `&quot;`Amazing results in just a few weeks. The team is
+            incredible!`&quot;`
           </p>
         </div>
-      )
+      ),
     },
     {
-      id: '3',
+      id: "3",
       content: (
         <div className="bg-white p-8 rounded-xl shadow-lg mx-4 h-48">
           <div className="flex items-center mb-4">
@@ -107,36 +108,39 @@ const SimpleCarouselExample: React.FC = () => {
             </div>
           </div>
           <p className="text-gray-700 italic">
-            "Professional, efficient, and delivered exactly what we needed."
+            `&quot;`Professional, efficient, and delivered exactly what we
+            needed.`&quot;`
           </p>
         </div>
-      )
-    }
+      ),
+    },
   ];
 
   const imageCards = [
     {
-      id: '1',
+      id: "1",
       content: (
         <div className="relative h-80 mx-2 rounded-xl overflow-hidden">
-          <img 
-            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop" 
+          <img
+            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop"
             alt="Office space"
             className="w-full h-full object-cover"
           />
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
             <h3 className="text-white text-xl font-bold">Modern Workspace</h3>
-            <p className="text-white/80">Collaborative environment for creativity</p>
+            <p className="text-white/80">
+              Collaborative environment for creativity
+            </p>
           </div>
         </div>
-      )
+      ),
     },
     {
-      id: '2',
+      id: "2",
       content: (
         <div className="relative h-80 mx-2 rounded-xl overflow-hidden">
-          <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" 
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop"
             alt="Team meeting"
             className="w-full h-full object-cover"
           />
@@ -145,14 +149,14 @@ const SimpleCarouselExample: React.FC = () => {
             <p className="text-white/80">Working together towards success</p>
           </div>
         </div>
-      )
+      ),
     },
     {
-      id: '3',
+      id: "3",
       content: (
         <div className="relative h-80 mx-2 rounded-xl overflow-hidden">
-          <img 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" 
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
             alt="Innovation"
             className="w-full h-full object-cover"
           />
@@ -161,8 +165,8 @@ const SimpleCarouselExample: React.FC = () => {
             <p className="text-white/80">Where ideas come to life</p>
           </div>
         </div>
-      )
-    }
+      ),
+    },
   ];
 
   return (
@@ -174,39 +178,50 @@ const SimpleCarouselExample: React.FC = () => {
 
         {/* Pricing Cards */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Pricing Plans</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            Pricing Plans (with Peek Effect)
+          </h2>
           <SimpleInfiniteCarousel
             cards={productCards}
             autoPlay={true}
             interval={4000}
             className="h-64"
+            peekAmount={80}
           />
         </section>
 
         {/* Testimonials */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Customer Testimonials</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            Customer Testimonials (Large Peek)
+          </h2>
           <SimpleInfiniteCarousel
             cards={testimonialCards}
             autoPlay={true}
             interval={5000}
             className="h-48"
+            peekAmount={120}
           />
         </section>
 
         {/* Image Gallery */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Our Workspace</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            Our Workspace (Subtle Peek)
+          </h2>
           <SimpleInfiniteCarousel
             cards={imageCards}
             autoPlay={false}
             className="h-80"
-          />
+            peekAmount={40}
+                    />
         </section>
 
         {/* Fast Auto-Play Example */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Quick Preview</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            Quick Preview (No Peek - Classic View)
+          </h2>
           <div className="bg-gray-800 rounded-lg p-8">
             <SimpleInfiniteCarousel
               cards={[
@@ -241,8 +256,23 @@ const SimpleCarouselExample: React.FC = () => {
               autoPlay={true}
               interval={2000}
               className="h-32"
+              peekAmount={0}
             />
           </div>
+        </section>
+
+        {/* Maximum Peek Example */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            Maximum Peek Effect
+          </h2>
+          <SimpleInfiniteCarousel
+            cards={productCards.slice(0, 3)}
+            autoPlay={true}
+            interval={3500}
+            className="h-64"
+            peekAmount={160}
+          />
         </section>
       </div>
     </div>

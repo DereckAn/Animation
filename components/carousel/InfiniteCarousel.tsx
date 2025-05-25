@@ -18,6 +18,7 @@ interface InfiniteCarouselProps {
   showControls?: boolean;
   showIndicators?: boolean;
   className?: string;
+  peekAmount?: number;
 }
 
 const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
@@ -28,6 +29,7 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
   showControls = true,
   showIndicators = true,
   className = "",
+  peekAmount = 80,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -134,15 +136,24 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
     return currentIndex - 1;
   };
 
+  const cardWidth = 100 - peekAmount / 4;
+  const translateOffset = peekAmount / 2;
+
   return (
     <div className={`relative w-full overflow-hidden ${className}`}>
       {/* Main carousel container */}
-      <div className="relative h-80 md:h-96">
+      <div
+        className="relative h-80 md:h-96"
+        style={{
+          paddingLeft: `${peekAmount / 2}px`,
+          paddingRight: `${peekAmount / 2}px`,
+        }}
+      >
         <div
           ref={containerRef}
           className="flex h-full transition-transform duration-500 ease-in-out"
           style={{
-            transform: `translateX(-${currentIndex * 100}%)`,
+            transform: `translateX(calc(-${currentIndex * cardWidth}% + ${translateOffset}px))`,
             transition: isTransitioning
               ? `transform ${animationDuration}ms ease-in-out`
               : "none",
@@ -153,9 +164,16 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
           {extendedCards.map((card, index) => (
             <div
               key={`${card.id}-${index}`}
-              className="w-full h-full flex-shrink-0 px-4"
+              className="h-full flex-shrink-0 px-2"
+              style={{ width: `${cardWidth}%` }}
             >
-              <div className="bg-white rounded-lg shadow-lg h-full overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:scale-105">
+              <div
+                className={`bg-white rounded-lg shadow-lg h-full overflow-hidden transform transition-all duration-300 hover:shadow-xl ${
+                  index === currentIndex
+                    ? "scale-100 opacity-100"
+                    : "scale-95 opacity-70 hover:opacity-90"
+                }`}
+              >
                 {card.image && (
                   <div className="h-48 bg-gray-200 overflow-hidden">
                     <img
@@ -165,14 +183,24 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
                     />
                   </div>
                 )}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                <div className="p-4 sm:p-6">
+                  <h3
+                    className={`font-bold text-gray-800 mb-2 ${
+                      index === currentIndex ? "text-xl" : "text-lg"
+                    }`}
+                  >
                     {card.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p
+                    className={`text-gray-600 leading-relaxed ${
+                      index === currentIndex ? "text-sm" : "text-xs"
+                    }`}
+                  >
                     {card.description}
                   </p>
-                  {card.content && <div className="mt-4">{card.content}</div>}
+                  {card.content && index === currentIndex && (
+                    <div className="mt-4">{card.content}</div>
+                  )}
                 </div>
               </div>
             </div>
@@ -186,7 +214,7 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
           <button
             onClick={prevSlide}
             disabled={isTransitioning}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200 disabled:opacity-50 z-10 group"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200 disabled:opacity-50 z-10 group"
           >
             <svg
               className="w-6 h-6 text-gray-800 group-hover:text-blue-600"
@@ -206,7 +234,7 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
           <button
             onClick={nextSlide}
             disabled={isTransitioning}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200 disabled:opacity-50 z-10 group"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200 disabled:opacity-50 z-10 group"
           >
             <svg
               className="w-6 h-6 text-gray-800 group-hover:text-blue-600"

@@ -103,9 +103,9 @@ const CarouselExample: React.FC = () => {
           </p>
         </div>
 
-        {/* Basic Carousel */}
+        {/* Basic Carousel with Peek Effect */}
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Featured Services</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Featured Services (with Peek)</h2>
           <InfiniteCarousel
             cards={sampleCards}
             autoPlay={true}
@@ -113,13 +113,14 @@ const CarouselExample: React.FC = () => {
             animationDuration={600}
             showControls={true}
             showIndicators={true}
+            peekAmount={100}
             className="mb-8"
           />
         </div>
 
-        {/* Fast Carousel */}
+        {/* Fast Carousel with Large Peek */}
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Quick Overview</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Quick Overview (Large Peek)</h2>
           <InfiniteCarousel
             cards={sampleCards.slice(0, 4)}
             autoPlay={true}
@@ -127,26 +128,28 @@ const CarouselExample: React.FC = () => {
             animationDuration={300}
             showControls={false}
             showIndicators={true}
+            peekAmount={150}
             className="mb-8"
           />
         </div>
 
-        {/* Manual Control Carousel */}
+        {/* Manual Control Carousel with Subtle Peek */}
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Browse at Your Own Pace</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Browse at Your Own Pace (Subtle Peek)</h2>
           <InfiniteCarousel
             cards={sampleCards}
             autoPlay={false}
             animationDuration={400}
             showControls={true}
             showIndicators={true}
+            peekAmount={60}
             className="mb-8"
           />
         </div>
 
-        {/* Custom Styled Cards */}
+        {/* Custom Styled Cards with No Peek */}
         <div className="mb-16">
-<h2 className="text-2xl font-bold text-gray-800 mb-6">Premium Services</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Premium Services (Classic View)</h2>
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-xl">
             <InfiniteCarousel
               cards={sampleCards.slice(0, 3)}
@@ -155,9 +158,25 @@ const CarouselExample: React.FC = () => {
               animationDuration={800}
               showControls={true}
               showIndicators={true}
+              peekAmount={0}
               className="mb-4"
             />
           </div>
+        </div>
+
+        {/* Extreme Peek Effect Example */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Maximum Peek Effect</h2>
+          <InfiniteCarousel
+            cards={sampleCards}
+            autoPlay={true}
+            autoPlayInterval={3500}
+            animationDuration={500}
+            showControls={true}
+            showIndicators={true}
+            peekAmount={200}
+            className="mb-8"
+          />
         </div>
 
         {/* Footer */}
