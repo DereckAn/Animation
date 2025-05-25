@@ -1,6 +1,6 @@
 const TitleAnimation = () => {
   return (
-    <div className="w-full h-[55vh] relative border-2 border-blue-500 flex justify-center items-center">
+    <div className="w-full h-[55vh] relative flex justify-center items-center">
       <h1 className="text-center w-full">
         <span className="text-responsive block leading-none">
           Health insurance that doesn't
