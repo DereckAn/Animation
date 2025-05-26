@@ -117,7 +117,7 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
         <RotatingArrowIcon
           direction="left"
           disabled={prevBtnDisabled}
-          size={60}
+          size={40}
           stroke="0.7"
           onClick={() => onAutoplayButtonClick(onPrevButtonClick)}
           className="group text-green-300"
@@ -125,7 +125,7 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
         <RotatingArrowIcon
           direction="right"
           disabled={nextBtnDisabled}
-          size={60}
+          size={40}
           stroke="0.7"
           onClick={() => onAutoplayButtonClick(onNextButtonClick)}
           className="group text-green-300"

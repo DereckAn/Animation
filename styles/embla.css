@@ -51,7 +51,8 @@
 /* Mobile First - hasta 640px */
 @media (max-width: 640px) {
     .embla {
-        --slide-size: 85%;
+        padding: 10px 0px;
+        --slide-size: 80%;
         --slide-spacing: 0rem;
     }
 }
@@ -69,5 +70,8 @@
     .embla {
         --slide-size: 60%;
         --slide-spacing: 1rem;
+    }
+    .embla__container {
+        height: 90%;
     }
 }

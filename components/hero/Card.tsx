@@ -20,29 +20,29 @@ export const Card = ({
   barcodeValue = "123",
 }: CardProps) => {
   return (
-    <div className="border-2 border-green-300/20 rounded-lg lg:rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-7 w-full h-full bg-green-100/35 flex flex-col justify-between">
+    <div className="border-2 border-green-300/20 rounded-lg lg:rounded-2xl sm:rounded-3xl p-3 sm:p-6 lg:p-7 w-full h-full bg-green-100/35 flex flex-col justify-between">
       <div className="flex items-start justify-between text-end">
         <Image
           src={image || cerdo}
           alt={name}
           width={200}
           height={200}
-          className="rounded-md sm:rounded-2xl size-[60px] sm:size-[90px] lg:size-[110px] object-cover flex-shrink-0"
+          className="rounded-md sm:rounded-2xl size-[50px] sm:size-[90px] lg:size-[110px] object-cover flex-shrink-0 mb-5"
         />
         <div className="flex flex-col ml-2 min-w-0 flex-1">
           <h3 className="text-xs sm:text-lg lg:text-xl text-green-300/80 leading-tight uppercase">
             {name}
           </h3>
-          <h4 className="text-xs sm:text-base lg:text-lg text-green-300/50 leading-tight uppercase">
+          <h4 className="text-xxs lg:text-lg text-green-300/50 leading-tight uppercase">
             {title}
           </h4>
-          <p className="text-xs sm:text-sm lg:text-md text-green-300/20 mt-2 sm:mt-4 lg:mt-5 tracking-widest">
+          <p className="text-xxxs sm:text-sm lg:text-md text-green-300/20 mt-2 sm:mt-4 lg:mt-5 tracking-widest">
             {id}
           </p>
         </div>
       </div>
       <div className="">
-        <h2 className="text-lg sm:text-2xl lg:text-3xl flex items-center text-green-300 mb-2 sm:mb-3">
+        <h2 className="text-lg sm:text-2xl lg:text-3xl flex items-center text-green-300  sm:mb-3">
           <svg
             fill="#6e9e8f30"
             version="1.1"
@@ -74,7 +74,9 @@ export const Card = ({
               </g>
             </g>
           </svg>
-          <span className="leading-tight inline-block text-sm">{job}</span>
+          <span className="leading-tight inline-block text-sm lg:text-lg">
+            {job}
+          </span>
         </h2>
         <div className="flex items-end gap-2">
           <div className="space-y-1 w-full flex-1">
