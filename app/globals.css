@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
+    
 
     /* Neutrals */
     --color-black-200: #081e13;
@@ -16,6 +15,9 @@
     --color-green-300: #6e9e8f;
     --color-green-200: #00b684;
     --color-green-100: #ccddc7;
+
+    --color-background: var(--off-white);
+    --color-foreground: var(--foreground);
 }
 
 /*
@@ -26,7 +28,7 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
-@layer base {
+/* @layer base {
     *,
     ::after,
     ::before,
@@ -34,11 +36,10 @@
     ::file-selector-button {
         border-color: var(--color-gray-200, currentcolor);
     }
-}
+} */
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    
 
     /* Neutrals */
     --black-200: #081e13;
@@ -52,6 +53,9 @@
     --green-300: #6e9e8f;
     --green-200: #00b684;
     --green-100: #ccddc7;
+
+    --background: #fbfaf6;
+    --foreground: #171717;
 }
 
 /* @media (prefers-color-scheme: dark) {

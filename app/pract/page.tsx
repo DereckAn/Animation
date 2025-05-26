@@ -55,7 +55,7 @@ const ResponsiveHealthText = () => {
           </p>
         </div>
       </div>
-      <CarouselExample />
+      {/* <CarouselExample /> */}
     </div>
   );
 };

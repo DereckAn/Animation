@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <section className="w-full h-screen flex flex-col justify-center items-center p-5 ">
       <TitleAnimation />
-      <div className="w-full h-[45vh] flex relative">
+      <div className="w-full h-[45vh] flex md:flex-row flex-col relative">
         <div className="flex basis-1/2 border-2 border-green-100 flex-col p-5 justify-between">
           <p className="text-3xl max-w-2xl ">
             Join hundreds of businesses who trust us to offer health insurance

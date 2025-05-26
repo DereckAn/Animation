@@ -1,22 +1,50 @@
+import { TextCarousel } from "@/components/hero/TextCarousel";
+
 const TitleAnimation = () => {
   return (
     <div className="w-full h-[55vh] relative flex justify-center items-center">
-      <h1 className="text-center w-full">
-        <span className="text-responsive block leading-none">
-          Health insurance that doesn't
-        </span>
+      <div className="text-center w-full">
+        <h1
+          className=" w-full text-center leading-none"
+          style={{
+            fontSize: "clamp(1rem, 7vw, 15rem)",
+            fontFamily: "Arial, sans-serif",
+            letterSpacing: "normal",
+            whiteSpace: "nowrap",
+          }}
+        >
+          Health insurance that doesn&apos;t
+        </h1>
+
         <div
           id="animation"
-          className="border-2 border-cyan-500 flex flex-row justify-center items-center leading-none"
+          className="flex flex-row justify-center items-center leading-none"
         >
-          <span className="text-responsive">get in</span>
-          <div
-            id="rectangle"
-            className="flex-1 h-[1em] border-2 rounded-2xl border-amber-400 mx-4"
-          ></div>
-          <span className="text-responsive">the way</span>
+          <span
+            className="text-responsive"
+            style={{
+              fontSize: "clamp(1rem, 7vw, 15rem)",
+              fontFamily: "Arial, sans-serif",
+              letterSpacing: "normal",
+              whiteSpace: "nowrap",
+            }}
+          >
+            get in
+          </span>
+          <TextCarousel />
+          <span
+            className="text-responsive"
+            style={{
+              fontSize: "clamp(1rem, 7vw, 15rem)",
+              fontFamily: "Arial, sans-serif",
+              letterSpacing: "normal",
+              whiteSpace: "nowrap",
+            }}
+          >
+            the way
+          </span>
         </div>
-      </h1>
+      </div>
     </div>
   );
 };
