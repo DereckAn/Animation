@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Soehne";
+    src: url("/fonts/soehne-buch.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 @theme {
     /* Neutrals */
     --color-black-200: #081e13;
@@ -16,6 +24,14 @@
 
     --color-background: var(--off-white);
     --color-foreground: var(--foreground);
+
+    /* Custom Font Sizes */
+    --font-size-xxs: 12px;
+    --font-size-xs: 14px;
+    --font-size-sm: 16px;
+    --font-size-md: 20px;
+    --font-size-lg: 24px;
+    --font-size-xl: 28px;
 }
 
 /*
@@ -64,7 +80,13 @@
 body {
     color: var(--green-500);
     background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+        "Soehne",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
 }
 
 @keyframes slideLeft {

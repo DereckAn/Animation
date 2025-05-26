@@ -52,7 +52,7 @@
 @media (max-width: 640px) {
     .embla {
         --slide-size: 85%;
-        --slide-spacing: 0.5rem;
+        --slide-spacing: 0rem;
     }
 }
 
