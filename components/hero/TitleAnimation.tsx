@@ -8,12 +8,17 @@ const TitleAnimation = () => {
           className=" w-full text-center leading-none"
           style={{
             fontSize: "clamp(1rem, 7vw, 15rem)",
-            fontFamily: "Arial, sans-serif",
-            letterSpacing: "normal",
-            whiteSpace: "nowrap",
           }}
         >
-          Health insurance that doesn&apos;t
+          Health insurance that{" "}
+          <span
+            className="transition-colors duration-1000 delay-1000 ease-in-out "
+            style={{
+              animation: "colorTransition 2s ease-in-out 3.5s forwards",
+            }}
+          >
+            doesn&apos;t
+          </span>
         </h1>
 
         <div
@@ -24,21 +29,21 @@ const TitleAnimation = () => {
             className="text-responsive"
             style={{
               fontSize: "clamp(1rem, 7vw, 15rem)",
-              fontFamily: "Arial, sans-serif",
-              letterSpacing: "normal",
               whiteSpace: "nowrap",
+              animation: "colorTransition 2s ease-in-out 3.5s forwards",
             }}
           >
             get in
           </span>
+          <span className="mx-2"> </span>
           <TextCarousel />
+          <span className="mx-2"> </span>
           <span
             className="text-responsive"
             style={{
               fontSize: "clamp(1rem, 7vw, 15rem)",
-              fontFamily: "Arial, sans-serif",
-              letterSpacing: "normal",
               whiteSpace: "nowrap",
+              animation: "colorTransition 2s ease-in-out 3.5s forwards",
             }}
           >
             the way

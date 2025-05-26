@@ -32,8 +32,19 @@ export const TextCarousel = () => {
   );
 
   return (
-    <div className="flex-1 h-[5em] border-2 rounded-2xl border-green-100 mx-4 flex items-center justify-center overflow-hidden">
-      <div className="flex items-center whitespace-nowrap">
+    <div
+      className="flex-1 h-[5em] border-2 rounded-2xl border-green-100 mx-4 flex items-center justify-center overflow-hidden"
+      style={{
+        animation:
+          "shrinkWidth 3s cubic-bezier(1,-0.01,.35,.95) 1s forwards",
+      }}
+    >
+      <div
+        className="flex items-center whitespace-nowrap"
+        style={{
+          animation: "slideLeft 8s ease-in-out infinite",
+        }}
+      >
         {phrases.map((phrase, index) => (
           <div key={index} className="flex items-center uppercase">
             <span className="text-xs font-medium px-6">{phrase}</span>
