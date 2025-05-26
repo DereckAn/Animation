@@ -1,4 +1,5 @@
 import { TextCarousel } from "@/components/hero/TextCarousel";
+import { ChanginColorText } from "./ChanginColorText";
 
 const TitleAnimation = () => {
   return (
@@ -10,44 +11,18 @@ const TitleAnimation = () => {
             fontSize: "clamp(1rem, 7vw, 15rem)",
           }}
         >
-          Health insurance that{" "}
-          <span
-            className="transition-colors duration-1000 delay-1000 ease-in-out "
-            style={{
-              animation: "colorTransition 2s ease-in-out 3.5s forwards",
-            }}
-          >
-            doesn&apos;t
-          </span>
+          Health insurance that <ChanginColorText text=" doesn't" />
         </h1>
 
         <div
           id="animation"
           className="flex flex-row justify-center items-center leading-none"
         >
-          <span
-            className="text-responsive"
-            style={{
-              fontSize: "clamp(1rem, 7vw, 15rem)",
-              whiteSpace: "nowrap",
-              animation: "colorTransition 2s ease-in-out 3.5s forwards",
-            }}
-          >
-            get in
-          </span>
+          <ChanginColorText text="get it" />
           <span className="mx-2"> </span>
           <TextCarousel />
           <span className="mx-2"> </span>
-          <span
-            className="text-responsive"
-            style={{
-              fontSize: "clamp(1rem, 7vw, 15rem)",
-              whiteSpace: "nowrap",
-              animation: "colorTransition 2s ease-in-out 3.5s forwards",
-            }}
-          >
-            the way
-          </span>
+          <ChanginColorText text="the way" />
         </div>
       </div>
     </div>

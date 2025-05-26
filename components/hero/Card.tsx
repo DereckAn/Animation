@@ -2,23 +2,37 @@ import Image from "next/image";
 import cerdo from "@/assets/cerdo.webp";
 import GreenBarcode from "./GreenBarcode";
 
-export const Card = () => {
+export interface CardProps {
+  name: string;
+  title: string;
+  id: string;
+  job: string;
+  image?: string;
+  barcodeValue?: string;
+}
+
+export const Card = ({
+  name,
+  title,
+  id,
+  job,
+  image,
+  barcodeValue = "123",
+}: CardProps) => {
   return (
-    <div className="border-2 border-green-300 rounded-3xl p-7 w-[600px] bg-green-100/35 flex flex-col justify-between">
+    <div className="border-2 border-green-300 rounded-3xl p-7 w-full h-full bg-green-100/35 flex flex-col justify-between">
       <div className="flex items-start justify-between text-end">
         <Image
-          src={cerdo}
-          alt=""
+          src={image || cerdo}
+          alt={name}
           width={200}
           height={200}
           className="rounded-2xl size-[110px] object-cover"
         />
         <div className="flex flex-col">
-          <h3 className="text-xl text-green-300/80">SARAH FOXX</h3>
-          <h4 className="text-lg text-green-300/50">OWNER, CEO</h4>
-          <p className="text-md text-green-300/20 mt-5 tracking-widest">
-            15-26669-890
-          </p>
+          <h3 className="text-xl text-green-300/80">{name.toUpperCase()}</h3>
+          <h4 className="text-lg text-green-300/50">{job.toUpperCase()}</h4>
+          <p className="text-md text-green-300/20 mt-5 tracking-widest">{id}</p>
         </div>
       </div>
       <div className="">
@@ -58,7 +72,7 @@ export const Card = () => {
               </g>{" "}
             </g>
           </svg>
-          Sunnyside Up Day Care
+          {title}
         </h2>
         <div className="flex">
           <div className="space-y-1 w-full">
@@ -76,7 +90,7 @@ export const Card = () => {
             </div>
           </div>
           <div id="barcode" className="ml-auto">
-            <GreenBarcode value="123" width={60} height={28} />
+            <GreenBarcode value={barcodeValue} width={60} height={28} />
           </div>
         </div>
       </div>
