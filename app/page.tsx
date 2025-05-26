@@ -7,6 +7,7 @@ import EmblaCarousel from "@/components/carousel/EmblaCarousel";
 import "@/styles/embla.css";
 import { EmblaOptionsType } from "embla-carousel";
 import { CardProps } from "@/components/hero/Card";
+import EmblaCarouselWithFramer from "@/components/carousel/EmblaCarouselWithFramer";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 const cardSample: CardProps[] = [
@@ -50,7 +51,8 @@ export default function Home() {
           <CustomButton />
         </div>
         <div className="flex basis-1/2 border-2 border-l-0 border-green-100 w-1/2">
-          <EmblaCarousel options={OPTIONS} cards={cardSample} />
+          {/* <EmblaCarousel options={OPTIONS} cards={cardSample} /> */}
+          <EmblaCarouselWithFramer options={OPTIONS} cards={cardSample} />
         </div>
       </div>
     </section>
