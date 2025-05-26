@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -61,7 +61,9 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
     if (!emblaApi) return;
     onSelect();
     emblaApi.on("select", onSelect);
-    return () => emblaApi.off("select", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
   }, [emblaApi, onSelect]);
 
   // Variantes de animación para Framer Motion
@@ -69,7 +71,7 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
     inactive: {
       scale: 0.85,
       opacity: 0.6,
-      transition: { duration: 0.3, ease: "easeOut" }
+      transition: { duration: 0.3, ease: "easeOut" },
     },
     active: {
       scale: 1,
@@ -77,14 +79,14 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
       transition: {
         duration: 0.4,
         ease: "easeOut",
-        delay: 0.1 // Pequeño delay para que se vea después del scroll
-      }
+        delay: 0.1, // Pequeño delay para que se vea después del scroll
+      },
     },
     transitioning: {
       scale: 0.85,
       opacity: 0.6,
-      transition: { duration: 0.2, ease: "easeIn" }
-    }
+      transition: { duration: 0.2, ease: "easeIn" },
+    },
   };
 
   const getAnimationState = (index: number) => {

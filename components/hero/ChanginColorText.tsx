@@ -11,8 +11,8 @@ export const ChanginColorText = ({
     <span
       className={className}
       style={{
-        fontSize: "clamp(1rem, 7vw, 15rem)",
-        whiteSpace: "nowrap",
+        fontSize: "clamp(3rem, 7vw, 15rem)",
+        // whiteSpace: "nowrap",
         animation: "colorTransition 2s ease-in-out 3s forwards",
       }}
     >
