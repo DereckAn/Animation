@@ -3,11 +3,7 @@ import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useAutoplay } from "./EmblaCarouselAutoplay";
-import {
-  NextButton,
-  PrevButton,
-  usePrevNextButtons,
-} from "./EmblaCarouselArrowButtons";
+import { usePrevNextButtons } from "./EmblaCarouselArrowButtons";
 import { Card, CardProps } from "../hero/Card";
 import RotatingArrowIcon from "../hero/RotatingArrowIcon";
 
@@ -18,8 +14,18 @@ type PropType = {
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { options, cards } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    Autoplay({ playOnInit: true, delay: 5000 }),
+  const emblaOptions: EmblaOptionsType = {
+    duration: 60,
+    ...options,
+  };
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(emblaOptions, [
+    Autoplay({
+      playOnInit: true,
+      delay: 5000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: false,
+    }),
   ]);
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -69,19 +75,19 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       <div className="">
         <RotatingArrowIcon
           direction="left"
-          size={50}
+          disabled={prevBtnDisabled}
+          size={60}
+          stroke="0.7"
           onClick={() => onAutoplayButtonClick(onPrevButtonClick)}
-          className="text-green-500 group-hover:text-green-200 transition-all
-        duration-700 ease-in-out
-        group-hover:-translate-x-60 transform"
+          className="group text-green-300"
         />
         <RotatingArrowIcon
           direction="right"
-          size={50}
+          disabled={nextBtnDisabled}
+          size={60}
+          stroke="0.7"
           onClick={() => onAutoplayButtonClick(onNextButtonClick)}
-          //   className="text-green-500 group-hover:text-green-200 transition-all
-          // duration-700 ease-in-out
-          // group-hover:-translate-x-60 transform"
+          className="group text-green-300"
         />
       </div>
     </div>
