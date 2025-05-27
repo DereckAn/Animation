@@ -9,6 +9,7 @@
     overflow: hidden;
     position: relative;
     box-sizing: border-box;
+    /* border:2px solid red; */
 }
 
 .embla__viewport {
@@ -77,7 +78,7 @@
 /* iPad - 641px a 1024px (VERTICAL) */
 @media (min-width: 641px) and (max-width: 1024px) {
     .embla {
-        padding: 1rem 0;
+        /* padding: 1rem 0; */
         --slide-size: 60%; /* Reducido para ver mejor las adyacentes */
         --slide-spacing: 1rem;
         --slide-height: 50vh; /* Altura fija para evitar estiramiento */
@@ -87,7 +88,7 @@
     .embla__viewport {
         height: 100%;
         width: 100%;
-        padding: 2rem 0; /* Más padding para centrar mejor */
+        /* padding: 2rem 0; */
     }
 
     .embla__container {
@@ -97,7 +98,7 @@
         /* height: calc(var(--slide-spacing) - var(--slide-height)); */
         width: 100%;
         align-items: center; /* Centra las cards horizontalmente */
-        border: 2px solid red;
+        /* border: 2px solid red; */
     }
 
     .embla__slide {
@@ -106,7 +107,7 @@
         min-height: 0;
         min-width: auto;
         padding-left: 0;
-        padding-top: var(--slide-spacing);
+        /* padding-top: var(--slide-spacing); */
         display: flex;
         align-items: center;
         justify-content: center;
