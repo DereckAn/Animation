@@ -92,7 +92,7 @@ const TitleAnimation = () => {
             />
           </h1>
 
-          <div className="flex justify-center my-2 leading-none">
+          <div className="flex justify-center leading-none">
             <TextCarousel />
           </div>
 

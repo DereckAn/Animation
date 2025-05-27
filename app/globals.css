@@ -81,15 +81,15 @@ body {
 
   100% {
     width: 0%;
-    height: 1em;
+    height: 0em;
     flex: 0;
     margin: 0;
     padding: 0;
     display: none;
   }
 }
-/* 
-@media (width > 375px) {
+
+/* @media (width > 640px) {
   @keyframes shrinkWidth {
     0% {
       width: 100%;
