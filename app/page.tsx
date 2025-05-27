@@ -38,9 +38,9 @@ const cardSample: CardProps[] = [
 
 export default function Home() {
   return (
-    <section className="w-full h-screen flex flex-col justify-center items-center p-5 ">
+    <section className="w-full flex flex-col justify-center items-center px-5 relative ">
       <TitleAnimation />
-      <div className="w-full lg:h-[45vh] flex md:flex-row flex-col-reverse relative">
+      <div className="w-full sm:h-[40vh] lg:h-[45vh] flex sm:flex-row flex-col-reverse">
         <div className="flex basis-1/2 border-2 border-green-100 flex-col p-5 justify-between shrink-0 gap-10 ">
           <p className="lg:text-3xl max-w-2xl">
             Join hundreds of businesses who trust us to offer health insurance
@@ -49,7 +49,7 @@ export default function Home() {
           </p>
           <CustomButton />
         </div>
-        <div className="flex basis-1/2 border-2 border-b-0 sm:h-[45vh] md:border-l-0 border-green-100 lg:w-1/2 py-5 sm:py-0 lg:py-5">
+        <div className="flex basis-1/2 border-2 border-b-0 sm:h-[40vh] lg:h-[45vh] md:border-l-0 sm:border-b-2 border-green-100 lg:w-1/2 py-5 sm:py-0 lg:py-5">
           <EmblaCarouselWithFramer options={OPTIONS} cards={cardSample} />
         </div>
       </div>

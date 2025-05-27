@@ -33,7 +33,7 @@ export const TextCarousel = () => {
 
   return (
     <div
-      className="lg:flex-1 h-[3em] sm:h-[4em] lg:h-[5em] border-2 rounded-2xl border-green-100 mx-2 sm:mx-4 flex items-center justify-center overflow-hidden "
+      className="lg:flex-1 h-[3.5em] sm:h-[4em] lg:h-[5em] border-2 rounded-2xl border-green-100 mx-2 sm:mx-4 flex items-center justify-center overflow-hidden"
       style={{
         animation: "shrinkWidth 3s cubic-bezier(1,-0.01,.35,.95) 1s forwards",
         transformOrigin: "center",

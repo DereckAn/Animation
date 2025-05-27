@@ -1,154 +1,157 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: "Soehne";
-    src: url("/fonts/soehne-buch.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Soehne";
+  src: url("/fonts/soehne-buch.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @theme {
-    /* Neutrals */
-    --color-black-200: #081e13;
-    --color-black-100: #112c2e;
-    --color-off-white: #fbfaf6;
-    --color-white: #ffffff;
+  /* Neutrals */
+  --color-black-200: #081e13;
+  --color-black-100: #112c2e;
+  --color-off-white: #fbfaf6;
+  --color-white: #ffffff;
 
-    /* Primary Greens */
-    --color-green-500: #153e2a;
-    --color-green-400: #30715d;
-    --color-green-300: #6e9e8f;
-    --color-green-200: #00b684;
-    --color-green-100: #ccddc7;
+  /* Primary Greens */
+  --color-green-500: #153e2a;
+  --color-green-400: #30715d;
+  --color-green-300: #6e9e8f;
+  --color-green-200: #00b684;
+  --color-green-100: #ccddc7;
 
-    --color-background: var(--off-white);
-    --color-foreground: var(--foreground);
+  --color-background: var(--off-white);
+  --color-foreground: var(--foreground);
 
-    --text-xxs: 10px;
-    --text-xxxs: 8px;
-    --text-md: 16px;
-    --text-lg: 20px;
+  --text-xxs: 10px;
+  --text-xxxs: 8px;
+  --text-md: 16px;
+  --text-lg: 20px;
 }
 
 :root {
-    /* Neutrals */
-    --black-200: #081e13;
-    --black-100: #112c2e;
-    --off-white: #fbfaf6;
-    --white: #ffffff;
+  /* Neutrals */
+  --black-200: #081e13;
+  --black-100: #112c2e;
+  --off-white: #fbfaf6;
+  --white: #ffffff;
 
-    /* Primary Greens */
-    --green-500: #153e2a;
-    --green-400: #30715d;
-    --green-300: #6e9e8f;
-    --green-200: #00b684;
-    --green-100: #ccddc7;
+  /* Primary Greens */
+  --green-500: #153e2a;
+  --green-400: #30715d;
+  --green-300: #6e9e8f;
+  --green-200: #00b684;
+  --green-100: #ccddc7;
 
-    --background: #fbfaf6;
-    --foreground: #171717;
+  --background: #fbfaf6;
+  --foreground: #171717;
 }
 
 body {
-    color: var(--green-500);
-    background: var(--background);
-    font-family:
-        "Soehne",
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
+  color: var(--green-500);
+  background: var(--background);
+  font-family: "Soehne", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
 }
 
 @keyframes slideLeft {
-    0% {
-        transform: translateX(0px);
-    }
-    100% {
-        transform: translateX(-300px);
-    }
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-300px);
+  }
 }
 
+/**
+   * Shrinks an element's width and height to 0, while also changing its opacity to 0.
+   *
+   * This animation is used to hide the hero section of the homepage when the user
+   * clicks on the "Learn More" button.
+   */
 @keyframes shrinkWidth {
-    0% {
-        opacity: 1;
-        transform: scaleY(1);
-        max-height: 3em;
-        margin: 0.5rem;
-    }
-    100% {
-        opacity: 0;
-        transform: scaleY(0);
-        max-height: 0;
-        margin: 0;
-        padding: 0;
-    }
-}
+  0% {
+    width: 100%;
+    height: 5em;
+    flex: 1;
+    opacity: 1;
+  }
 
+  100% {
+    width: 0%;
+    height: 1em;
+    flex: 0;
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
+}
+/* 
 @media (width > 375px) {
-    @keyframes shrinkWidth {
-        0% {
-            width: 100%;
-            height: 5em;
-            flex: 1;
-            opacity: 1;
-        }
-
-        100% {
-            width: 0%;
-            height: 1em;
-            flex: 0;
-            margin: 0;
-            padding: 0;
-            display: none;
-        }
+  @keyframes shrinkWidth {
+    0% {
+      width: 100%;
+      height: 5em;
+      flex: 1;
+      opacity: 1;
     }
-}
+
+    100% {
+      width: 0%;
+      height: 1em;
+      flex: 0;
+      margin: 0;
+      padding: 0;
+      display: none;
+    }
+  }
+} */
 
 @keyframes colorTransition {
-    0% {
-        color: var(--green-500);
-        transform: skewX(0deg);
-    }
-    10% {
-        color: #1f4b31;
-        transform: skewX(-1deg);
-    }
-    20% {
-        color: #255038;
-        transform: skewX(-2deg);
-    }
-    30% {
-        color: #2b553f;
-        transform: skewX(-3deg);
-    }
-    40% {
-        color: #315a46;
-        transform: skewX(-5deg);
-    }
-    50% {
-        color: #37604d;
-        transform: skewX(-6deg);
-    }
-    60% {
-        color: #3d6554;
-        transform: skewX(-7deg);
-    }
-    70% {
-        color: #436a5b;
-        transform: skewX(-8deg);
-    }
-    80% {
-        color: #4a7062;
-        transform: skewX(-9deg);
-    }
-    90% {
-        color: #507569;
-        transform: skewX(-10deg);
-    }
-    100% {
-        color: var(--green-200);
-        transform: skewX(-12deg);
-    }
+  0% {
+    color: var(--green-500);
+    transform: skewX(0deg);
+  }
+  10% {
+    color: #1f4b31;
+    transform: skewX(-1deg);
+  }
+  20% {
+    color: #255038;
+    transform: skewX(-2deg);
+  }
+  30% {
+    color: #2b553f;
+    transform: skewX(-3deg);
+  }
+  40% {
+    color: #315a46;
+    transform: skewX(-5deg);
+  }
+  50% {
+    color: #37604d;
+    transform: skewX(-6deg);
+  }
+  60% {
+    color: #3d6554;
+    transform: skewX(-7deg);
+  }
+  70% {
+    color: #436a5b;
+    transform: skewX(-8deg);
+  }
+  80% {
+    color: #4a7062;
+    transform: skewX(-9deg);
+  }
+  90% {
+    color: #507569;
+    transform: skewX(-10deg);
+  }
+  100% {
+    color: var(--green-200);
+    transform: skewX(-12deg);
+  }
 }
