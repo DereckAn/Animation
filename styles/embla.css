@@ -8,12 +8,14 @@
     flex-direction: column;
     overflow: hidden;
     position: relative;
+    box-sizing: border-box;
 }
 
 .embla__viewport {
     overflow: hidden;
     height: 75%;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .embla__container {
@@ -21,6 +23,7 @@
     touch-action: pan-y pinch-zoom;
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .embla__slide__inner {
@@ -31,6 +34,8 @@
         opacity 0.3s ease;
     transform: scale(0.85);
     opacity: 0.6;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .embla__slide__inner--active {
@@ -46,14 +51,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
+    overflow: visible; /* Cambiado para permitir que se vean las cards adyacentes */
 }
 
 /* Mobile First - hasta 640px */
 @media (max-width: 640px) {
     .embla {
-        padding: 10px 0px;
-        --slide-size: 80%;
-        --slide-spacing: 0rem;
+        padding: 0.25rem 0;
+        --slide-size: 78%; /* Perfecto para ver las adyacentes */
+        --slide-spacing: 0.5rem; /* Pequeño espacio entre slides */
+    }
+
+    .embla__viewport {
+        height: 85%;
+        padding: 0 0.5rem; /* Padding para centrar mejor */
+    }
+
+    .embla__slide {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
     }
 }
 
@@ -63,6 +80,10 @@
         --slide-size: 70%;
         --slide-spacing: 0.75rem;
     }
+
+    .embla__viewport {
+        height: 80%;
+    }
 }
 
 /* Desktop - 1024px en adelante */
@@ -71,7 +92,8 @@
         --slide-size: 60%;
         --slide-spacing: 1rem;
     }
-    .embla__container {
-        height: 90%;
+
+    .embla__viewport {
+        height: 75%;
     }
 }

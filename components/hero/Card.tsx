@@ -20,29 +20,30 @@ export const Card = ({
   barcodeValue = "123",
 }: CardProps) => {
   return (
-    <div className="border-2 border-green-300/20 rounded-lg lg:rounded-2xl sm:rounded-3xl p-3 sm:p-6 lg:p-7 w-full h-full bg-green-100/35 flex flex-col justify-between">
-      <div className="flex items-start justify-between text-end">
+    <div className="border-2 border-green-300/20 rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-4 lg:p-6 w-full h-full bg-green-100/35 flex flex-col justify-between overflow-hidden box-border">
+      <div className="flex items-start justify-between text-end min-h-0 flex-shrink-0 mb-2 sm:mb-3 lg:mb-4">
         <Image
           src={image || cerdo}
           alt={name}
           width={200}
           height={200}
-          className="rounded-md sm:rounded-2xl size-[50px] sm:size-[90px] lg:size-[110px] object-cover flex-shrink-0 mb-5"
+          className="rounded-md sm:rounded-xl size-[40px] sm:size-[70px] lg:size-[90px] object-cover flex-shrink-0"
         />
-        <div className="flex flex-col ml-2 min-w-0 flex-1">
-          <h3 className="text-xs sm:text-lg lg:text-xl text-green-300/80 leading-tight uppercase">
+        <div className="flex flex-col ml-2 min-w-0 flex-1 overflow-hidden">
+          <h3 className="text-[9px] sm:text-sm lg:text-lg text-green-300/80 leading-tight uppercase truncate">
             {name}
           </h3>
-          <h4 className="text-xxs lg:text-lg text-green-300/50 leading-tight uppercase">
+          <h4 className="text-[8px] sm:text-xs lg:text-base text-green-300/50 leading-tight uppercase truncate">
             {title}
           </h4>
-          <p className="text-xxxs sm:text-sm lg:text-md text-green-300/20 mt-2 sm:mt-4 lg:mt-5 tracking-widest">
+          <p className="text-[7px] sm:text-[10px] lg:text-sm text-green-300/20 mt-1 sm:mt-2 lg:mt-3 tracking-widest truncate">
             {id}
           </p>
         </div>
       </div>
-      <div className="">
-        <h2 className="text-lg sm:text-2xl lg:text-3xl flex items-center text-green-300  sm:mb-3">
+
+      <div className="flex-1 flex flex-col justify-end min-h-0 overflow-hidden">
+        <h2 className="text-[11px] sm:text-base lg:text-xl flex items-start text-green-300 mb-2 sm:mb-3 lg:mb-4 leading-tight">
           <svg
             fill="#6e9e8f30"
             version="1.1"
@@ -54,7 +55,7 @@ export const Card = ({
             transform="matrix(-1, 0, 0, 1, 0, 0)"
             stroke="#6e9e8f30"
             strokeWidth="0.00123959"
-            className="size-4 sm:size-5 lg:size-6 flex-shrink-0 mr-1"
+            className="size-2.5 sm:size-4 lg:size-5 flex-shrink-0 mr-1 mt-0.5"
           >
             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g
@@ -74,31 +75,32 @@ export const Card = ({
               </g>
             </g>
           </svg>
-          <span className="leading-tight inline-block text-sm lg:text-lg">
+          <span className="leading-tight flex-1 min-w-0 truncate text-[11px] sm:text-base lg:text-xl">
             {job}
           </span>
         </h2>
-        <div className="flex items-end gap-2">
-          <div className="space-y-1 w-full flex-1">
-            <div className="flex gap-1">
-              <div className="h-1.5 sm:h-2 bg-green-300/10 rounded-full w-[35%]" />
-              <div className="h-1.5 sm:h-2 bg-green-300/10 rounded-full w-[15%]" />
-              <div className="h-1.5 sm:h-2 bg-green-300/10 rounded-full size-1.5 sm:size-2" />
-              <div className="h-1.5 sm:h-2 bg-green-300/10 rounded-full size-1.5 sm:size-2" />
-              <div className="h-1.5 sm:h-2 bg-green-300/10 rounded-full w-[15%]" />
+
+        <div className="flex items-end gap-1 sm:gap-2 min-h-0">
+          <div className="space-y-0.5 sm:space-y-1 w-full flex-1 min-w-0">
+            <div className="flex gap-0.5 sm:gap-1">
+              <div className="h-1 sm:h-1.5 lg:h-2 bg-green-300/10 rounded-full w-[35%] flex-shrink-0" />
+              <div className="h-1 sm:h-1.5 lg:h-2 bg-green-300/10 rounded-full w-[15%] flex-shrink-0" />
+              <div className="h-1 sm:h-1.5 lg:h-2 bg-green-300/10 rounded-full w-1.5 sm:w-2 lg:w-2 flex-shrink-0" />
+              <div className="h-1 sm:h-1.5 lg:h-2 bg-green-300/10 rounded-full w-1.5 sm:w-2 lg:w-2 flex-shrink-0" />
+              <div className="h-1 sm:h-1.5 lg:h-2 bg-green-300/10 rounded-full w-[15%] flex-shrink-0" />
             </div>
-            <div className="flex gap-1">
-              <div className="h-1.5 sm:h-2 bg-green-300/10 rounded-full w-[15%]" />
-              <div className="h-1.5 sm:h-2 bg-green-300/10 rounded-full w-[30%]" />
-              <div className="h-1.5 sm:h-2 bg-green-300/10 rounded-full w-[15%]" />
+            <div className="flex gap-0.5 sm:gap-1">
+              <div className="h-1 sm:h-1.5 lg:h-2 bg-green-300/10 rounded-full w-[15%] flex-shrink-0" />
+              <div className="h-1 sm:h-1.5 lg:h-2 bg-green-300/10 rounded-full w-[30%] flex-shrink-0" />
+              <div className="h-1 sm:h-1.5 lg:h-2 bg-green-300/10 rounded-full w-[15%] flex-shrink-0" />
             </div>
           </div>
           <div id="barcode" className="flex-shrink-0">
             <GreenBarcode
               value={barcodeValue}
-              width={45}
-              height={22}
-              // className="sm:w-[55px] sm:h-[26px] lg:w-[60px] lg:h-[28px]"
+              width={40}
+              height={18}
+              className="sm:w-[40px] sm:h-[22px] lg:w-[50px] lg:h-[25px]"
             />
           </div>
         </div>

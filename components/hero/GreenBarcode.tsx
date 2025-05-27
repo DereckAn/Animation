@@ -4,12 +4,14 @@ interface GreenBarcodeProps {
   value?: string;
   width?: number;
   height?: number;
+  className?: string;
 }
 
 const GreenBarcode: React.FC<GreenBarcodeProps> = ({
   value = "152666989",
   width = 90,
   height = 28,
+  className,
 }) => {
   // Generate barcode pattern based on value
   const generateBarcodePattern = (val: string) => {
@@ -37,7 +39,7 @@ const GreenBarcode: React.FC<GreenBarcodeProps> = ({
 
   return (
     <div
-      className="flex items-end gap-[2px] rounded w-fit"
+      className={`flex items-end gap-[2px] rounded w-fit ${className}`}
       style={{ width: `${width}px` }}
     >
       {pattern.map((width, index) => (
@@ -46,7 +48,7 @@ const GreenBarcode: React.FC<GreenBarcodeProps> = ({
           className="bg-green-300/10"
           style={{
             width: `${width * 2}px`, // Multiplica por 2 para barras más gruesas
-            height: `${height - Math.random() * 3}px`,
+            height: `${height}px`,
           }}
         />
       ))}

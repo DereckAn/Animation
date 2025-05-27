@@ -113,7 +113,7 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      <div className="">
+      <div className="pt-5 lg:p-0">
         <RotatingArrowIcon
           direction="left"
           disabled={prevBtnDisabled}

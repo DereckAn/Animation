@@ -27,6 +27,8 @@
 
     --text-xxs: 10px;
     --text-xxxs: 8px;
+    --text-md: 16px;
+    --text-lg: 20px;
 }
 
 :root {
