@@ -20,7 +20,11 @@ export const Card = ({
   barcodeValue = "123",
 }: CardProps) => {
   return (
-    <div className="border-2 border-green-300/20 rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-4 lg:p-6 w-full h-full bg-green-100/35 flex flex-col justify-between overflow-hidden box-border">
+    <div
+      className="border-2 border-green-300/20 rounded-lg
+      p-2 sm:p-4 lg:p-6 w-full h-full max-h-[250px] 2xl:max-h-none bg-green-100/35
+      flex flex-col justify-between overflow-hidden "
+    >
       <div className="flex items-start justify-between text-end min-h-0 flex-shrink-0 mb-2 sm:mb-3 lg:mb-4">
         <Image
           src={image || cerdo}
@@ -98,9 +102,9 @@ export const Card = ({
           <div id="barcode" className="flex-shrink-0">
             <GreenBarcode
               value={barcodeValue}
-              width={40}
+              width={30}
               height={18}
-              className="sm:w-[40px] sm:h-[22px] lg:w-[50px] lg:h-[25px]"
+              className="sm:w-[45px] sm:h-[22px] lg:w-[50px] lg:h-[25px]"
             />
           </div>
         </div>

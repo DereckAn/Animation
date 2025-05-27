@@ -52,20 +52,20 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    overflow: visible; /* Cambiado para permitir que se vean las cards adyacentes */
+    overflow: visible;
 }
 
-/* Mobile First - hasta 640px */
+/* Mobile First - hasta 640px (horizontal) */
 @media (max-width: 640px) {
     .embla {
         padding: 0.25rem 0;
-        --slide-size: 78%; /* Perfecto para ver las adyacentes */
-        --slide-spacing: 0.5rem; /* Pequeño espacio entre slides */
+        --slide-size: 78%;
+        --slide-spacing: 0.5rem;
     }
 
     .embla__viewport {
         height: 85%;
-        padding: 0 0.5rem; /* Padding para centrar mejor */
+        padding: 0 0.5rem;
     }
 
     .embla__slide {
@@ -74,20 +74,57 @@
     }
 }
 
-/* Tablets - 641px a 1023px */
-@media (min-width: 641px) and (max-width: 1023px) {
+/* iPad - 641px a 1024px (VERTICAL) */
+@media (min-width: 641px) and (max-width: 1024px) {
     .embla {
-        --slide-size: 70%;
-        --slide-spacing: 0.75rem;
+        padding: 1rem 0;
+        --slide-size: 60%; /* Reducido para ver mejor las adyacentes */
+        --slide-spacing: 1rem;
+        --slide-height: 50vh; /* Altura fija para evitar estiramiento */
+        height: 100%;
     }
 
     .embla__viewport {
-        height: 80%;
+        height: 100%;
+        width: 100%;
+        padding: 2rem 0; /* Más padding para centrar mejor */
+    }
+
+    .embla__container {
+        display: flex;
+        flex-direction: column;
+        touch-action: pan-y pinch-zoom;
+        /* height: calc(var(--slide-spacing) - var(--slide-height)); */
+        width: 100%;
+        align-items: center; /* Centra las cards horizontalmente */
+        border: 2px solid red;
+    }
+
+    .embla__slide {
+        transform: translate3d(0, 0, 0);
+        flex: 0 0 var(--slide-size); /* 60% de altura */
+        min-height: 0;
+        min-width: auto;
+        padding-left: 0;
+        padding-top: var(--slide-spacing);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%; /* Ancho limitado para mejor proporción */
+        max-height: var(--slide-height); /* Altura máxima fija */
+        overflow: visible;
+    }
+
+    /* Limitar la altura del slide inner en iPad */
+    .embla__slide__inner {
+        max-height: var(--slide-height);
+        width: 100%;
+        height: 100%;
     }
 }
 
-/* Desktop - 1024px en adelante */
-@media (min-width: 1024px) {
+/* Desktop - 1025px en adelante (horizontal) */
+@media (min-width: 1025px) {
     .embla {
         --slide-size: 60%;
         --slide-spacing: 1rem;

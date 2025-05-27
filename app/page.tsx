@@ -49,7 +49,7 @@ export default function Home() {
           </p>
           <CustomButton />
         </div>
-        <div className="flex basis-1/2 border-2 border-b-0 lg:border-l-0  border-green-100 lg:w-1/2 py-5">
+        <div className="flex basis-1/2 border-2 border-b-0 sm:h-[45vh] md:border-l-0 border-green-100 lg:w-1/2 py-5 sm:py-0 lg:py-5">
           <EmblaCarouselWithFramer options={OPTIONS} cards={cardSample} />
         </div>
       </div>

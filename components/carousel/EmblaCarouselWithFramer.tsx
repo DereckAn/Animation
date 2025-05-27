@@ -15,8 +15,25 @@ type PropType = {
 
 const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
   const { options, cards } = props;
+
+  // Detectar si estamos en iPad para cambiar la orientación
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    const checkViewport = () => {
+      const width = window.innerWidth;
+      setIsTablet(width >= 641 && width <= 1024);
+    };
+
+    checkViewport();
+    window.addEventListener("resize", checkViewport);
+
+    return () => window.removeEventListener("resize", checkViewport);
+  }, []);
+
   const emblaOptions: EmblaOptionsType = {
     duration: 40,
+    axis: isTablet ? "y" : "x", // Vertical en tablet, horizontal en otros
     ...options,
   };
 
@@ -41,7 +58,6 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
 
   const { onAutoplayButtonClick } = useAutoplay(emblaApi);
 
-  // Detectar cambios y manejar transición
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     const newIndex = emblaApi.selectedScrollSnap();
@@ -49,7 +65,6 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
     if (newIndex !== activeIndex) {
       setIsTransitioning(true);
 
-      // Cambiar índice después de un breve delay para la secuencia
       setTimeout(() => {
         setActiveIndex(newIndex);
         setTimeout(() => setIsTransitioning(false), 100);
@@ -66,7 +81,6 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
     };
   }, [emblaApi, onSelect]);
 
-  // Variantes de animación para Framer Motion
   const cardVariants = {
     inactive: {
       scale: 0.85,
@@ -79,7 +93,7 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
       transition: {
         duration: 0.4,
         ease: "easeOut",
-        delay: 0.1, // Pequeño delay para que se vea después del scroll
+        delay: 0.1,
       },
     },
     transitioning: {
@@ -95,11 +109,11 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
   };
 
   return (
-    <div className="embla">
+    <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container ">
+        <div className="embla__container">
           {cards?.map((cardProps, index) => (
-            <div className="embla__slide " key={index}>
+            <div className="embla__slide" key={index}>
               <motion.div
                 className="embla__slide__inner"
                 variants={cardVariants}
@@ -113,9 +127,10 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      <div className="pt-5 lg:p-0">
+      {/* Botones adaptativos según la orientación */}
+      <div className={`pt-5 lg:p-0 flex flex-row justify-center gap-4"}`}>
         <RotatingArrowIcon
-          direction="left"
+          direction={"left"}
           disabled={prevBtnDisabled}
           size={40}
           stroke="0.7"
@@ -123,7 +138,7 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
           className="group text-green-300"
         />
         <RotatingArrowIcon
-          direction="right"
+          direction={"right"}
           disabled={nextBtnDisabled}
           size={40}
           stroke="0.7"
@@ -131,7 +146,7 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
           className="group text-green-300"
         />
       </div>
-    </div>
+    </section>
   );
 };
 
