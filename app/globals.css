@@ -15,6 +15,18 @@
   --color-off-white: #fbfaf6;
   --color-white: #ffffff;
 
+  /* Medical Blues */
+  --color-blue-900: #1e3a8a;
+  --color-blue-800: #1e40af;
+  --color-blue-700: #1d4ed8;
+  --color-blue-600: #2563eb;
+  --color-blue-500: #3b82f6;
+  --color-blue-400: #60a5fa;
+  --color-blue-300: #93c5fd;
+  --color-blue-200: #bfdbfe;
+  --color-blue-100: #dbeafe;
+  --color-blue-50: #eff6ff;
+
   /* Primary Greens */
   --color-green-500: #153e2a;
   --color-green-400: #30715d;
@@ -22,8 +34,33 @@
   --color-green-200: #00b684;
   --color-green-100: #ccddc7;
 
-  --color-background: var(--off-white);
-  --color-foreground: var(--foreground);
+  /* Beauty Palette */
+  --color-gold-500: #d4af37;
+  --color-gold-400: #dab84d;
+  --color-gold-300: #e0c269;
+  --color-gold-200: #f0d883;
+  --color-gold-100: #f7e8a3;
+
+  --color-rose-500: #d63384;
+  --color-rose-400: #e85aa0;
+  --color-rose-300: #f48fb1;
+  --color-rose-200: #fbb6ce;
+  --color-rose-100: #fce4ec;
+
+  --color-cream-500: #f5e6d3;
+  --color-cream-400: #f7edd8;
+  --color-cream-300: #f9f3dd;
+  --color-cream-200: #fbf8e2;
+  --color-cream-100: #fdfce7;
+
+  --color-mint-500: #7dd3c0;
+  --color-mint-400: #95dbc9;
+  --color-mint-300: #ade3d2;
+  --color-mint-200: #c5ebdb;
+  --color-mint-100: #ddf3e4;
+
+  --color-background: var(--cream-100);
+  --color-foreground: var(--color-black-200);
 
   --text-xxs: 10px;
   --text-xxxs: 8px;
@@ -45,12 +82,37 @@
   --green-200: #00b684;
   --green-100: #ccddc7;
 
-  --background: #fbfaf6;
-  --foreground: #171717;
+  /* Beauty Palette */
+  --gold-500: #d4af37;
+  --gold-400: #dab84d;
+  --gold-300: #e0c269;
+  --gold-200: #f0d883;
+  --gold-100: #f7e8a3;
+
+  --rose-500: #d63384;
+  --rose-400: #e85aa0;
+  --rose-300: #f48fb1;
+  --rose-200: #fbb6ce;
+  --rose-100: #fce4ec;
+
+  --cream-500: #f5e6d3;
+  --cream-400: #f7edd8;
+  --cream-300: #f9f3dd;
+  --cream-200: #fbf8e2;
+  --cream-100: #fdfce7;
+
+  --mint-500: #7dd3c0;
+  --mint-400: #95dbc9;
+  --mint-300: #ade3d2;
+  --mint-200: #c5ebdb;
+  --mint-100: #ddf3e4;
+
+  --background: #fdfce7;
+  --foreground: #081e13;
 }
 
 body {
-  color: var(--green-500);
+  color: var(--foreground);
   background: var(--background);
   font-family: "Soehne", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -100,7 +162,7 @@ body {
 
     100% {
       width: 0%;
-      height: 1em;
+      height: 0em;
       flex: 0;
       margin: 0;
       padding: 0;
