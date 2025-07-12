@@ -103,27 +103,6 @@ const services = [
   }
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5
-    }
-  }
-};
 
 export default function ServiciosPage() {
   return (
@@ -132,20 +111,24 @@ export default function ServiciosPage() {
       <section className="pt-20 pb-16 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="text-center"
           >
             <motion.h1 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-4xl md:text-5xl font-bold text-blue-900 mb-6"
             >
               Nuestros Servicios
             </motion.h1>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
             >
               Ofrecemos una amplia gama de servicios oncológicos especializados, 
@@ -160,10 +143,9 @@ export default function ServiciosPage() {
       <section className="pb-16 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {services.map((service, index) => {
@@ -171,7 +153,9 @@ export default function ServiciosPage() {
               return (
                 <motion.div
                   key={service.title}
-                  variants={itemVariants}
+                  initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
                   whileHover={{ scale: 1.02 }}
                   className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
                 >
@@ -213,20 +197,23 @@ export default function ServiciosPage() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
             <motion.h2 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-3xl md:text-4xl font-bold mb-6"
             >
               ¿Necesitas más información?
             </motion.h2>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-blue-100 mb-8 text-lg"
             >
               Nuestro equipo de especialistas está disponible para responder 
@@ -234,7 +221,9 @@ export default function ServiciosPage() {
             </motion.p>
             
             <motion.div 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Link

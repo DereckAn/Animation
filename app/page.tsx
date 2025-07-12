@@ -26,27 +26,6 @@ const services = [
   }
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5
-    }
-  }
-};
 
 export default function Home() {
   return (
@@ -55,13 +34,15 @@ export default function Home() {
       <section className="relative pt-20 pb-16 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="text-center"
           >
             <motion.div 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="mb-8"
             >
               <Image
@@ -74,7 +55,9 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
               className="text-4xl md:text-6xl font-bold text-blue-900 mb-6"
             >
               Oncología{" "}
@@ -82,7 +65,9 @@ export default function Home() {
             </motion.h1>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
             >
               Atención médica integral y personalizada para pacientes con cáncer en Guadalajara, Jalisco. 
@@ -90,7 +75,9 @@ export default function Home() {
             </motion.p>
             
             <motion.div 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Link
@@ -116,20 +103,23 @@ export default function Home() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h2 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-4"
             >
               Nuestros Servicios
             </motion.h2>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               className="text-gray-600 text-center max-w-2xl mx-auto mb-12"
             >
               Ofrecemos una amplia gama de servicios oncológicos especializados 
@@ -142,7 +132,9 @@ export default function Home() {
                 return (
                   <motion.div
                     key={service.title}
-                    variants={itemVariants}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                     whileHover={{ scale: 1.05 }}
                     className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                   >
@@ -173,21 +165,24 @@ export default function Home() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             className="text-center"
           >
             <motion.h2 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="text-3xl md:text-4xl font-bold mb-6"
             >
               Comprometidos con tu Salud
             </motion.h2>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
               className="text-blue-100 max-w-3xl mx-auto mb-8 text-lg"
             >
               En Onko.es, entendemos que cada paciente es único. Nuestro equipo multidisciplinario 
@@ -196,7 +191,9 @@ export default function Home() {
             </motion.p>
             
             <motion.div 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
               className="grid md:grid-cols-3 gap-8 mt-12"
             >
               <div className="text-center">
@@ -220,20 +217,23 @@ export default function Home() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             <motion.h2 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               className="text-3xl md:text-4xl font-bold text-blue-900 mb-4"
             >
               ¿Necesitas una Consulta?
             </motion.h2>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
               className="text-gray-600 mb-8 text-lg"
             >
               Nuestro equipo está listo para brindarte la atención que necesitas. 
@@ -241,7 +241,9 @@ export default function Home() {
             </motion.p>
             
             <motion.div 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <Link

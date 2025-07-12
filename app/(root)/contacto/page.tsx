@@ -38,27 +38,6 @@ const contactMethods = [
   }
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { y: 30, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6
-    }
-  }
-};
 
 export default function ContactoPage() {
   return (
@@ -67,20 +46,24 @@ export default function ContactoPage() {
       <section className="pt-20 pb-16 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="text-center"
           >
             <motion.h1 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
               className="text-4xl md:text-5xl font-bold text-blue-900 mb-6"
             >
               Contacto
             </motion.h1>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
             >
               Estamos aquí para ayudarte. Contáctanos por cualquiera de nuestros 
@@ -94,10 +77,9 @@ export default function ContactoPage() {
       <section className="pb-16 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="grid md:grid-cols-2 gap-8"
           >
             {contactMethods.map((method, index) => {
@@ -105,7 +87,9 @@ export default function ContactoPage() {
               return (
                 <motion.div
                   key={method.title}
-                  variants={itemVariants}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                   whileHover={{ scale: 1.02 }}
                   className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
                 >
@@ -151,27 +135,32 @@ export default function ContactoPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
             <motion.h2 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-6"
             >
               Envíanos un Mensaje
             </motion.h2>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="text-gray-600 text-center mb-8"
             >
               Completa el formulario y nos pondremos en contacto contigo en las próximas 24 horas.
             </motion.p>
             
             <motion.form 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="space-y-6"
             >
               <div className="grid md:grid-cols-2 gap-6">
@@ -265,21 +254,24 @@ export default function ContactoPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             className="text-center"
           >
             <motion.h2 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="text-3xl md:text-4xl font-bold text-blue-900 mb-8"
             >
               Horarios de Atención
             </motion.h2>
             
             <motion.div 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="grid md:grid-cols-3 gap-8"
             >
               <div className="bg-white p-6 rounded-xl shadow-md">
@@ -332,20 +324,23 @@ export default function ContactoPage() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
             <motion.h2 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="text-3xl md:text-4xl font-bold mb-6"
             >
               ¿Necesitas Atención Inmediata?
             </motion.h2>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="text-blue-100 mb-8 text-lg"
             >
               Si tienes una emergencia oncológica o necesitas atención inmediata, 
@@ -353,7 +348,9 @@ export default function ContactoPage() {
             </motion.p>
             
             <motion.div 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <a

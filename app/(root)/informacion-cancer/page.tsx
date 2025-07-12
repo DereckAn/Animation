@@ -41,27 +41,6 @@ const warningSigns = [
   "Sangrado anormal"
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { y: 30, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6
-    }
-  }
-};
 
 export default function InformacionCancerPage() {
   return (
@@ -70,20 +49,24 @@ export default function InformacionCancerPage() {
       <section className="pt-20 pb-16 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="text-center"
           >
             <motion.h1 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-4xl md:text-5xl font-bold text-blue-900 mb-6"
             >
               Información sobre el Cáncer
             </motion.h1>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
             >
               Conoce más sobre el cáncer, sus tipos, síntomas y medidas de prevención. 
@@ -97,20 +80,23 @@ export default function InformacionCancerPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h2 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-6"
             >
               ¿Qué es el Cáncer?
             </motion.h2>
             
             <motion.div 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="max-w-4xl mx-auto text-center mb-8"
             >
               <p className="text-lg text-gray-600 mb-4">
@@ -131,13 +117,14 @@ export default function InformacionCancerPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
             <motion.h2 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12"
             >
               Tipos Comunes de Cáncer
@@ -147,7 +134,9 @@ export default function InformacionCancerPage() {
               {cancerTypes.map((cancer, index) => (
                 <motion.div
                   key={cancer.name}
-                  variants={itemVariants}
+                  initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
                   className="bg-white p-6 rounded-xl shadow-lg border border-gray-100"
                 >
                   <h3 className="text-xl font-semibold text-blue-900 mb-3">
@@ -193,20 +182,23 @@ export default function InformacionCancerPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h2 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-6"
             >
               Señales de Alerta
             </motion.h2>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-gray-600 text-center max-w-3xl mx-auto mb-8"
             >
               Es importante conocer las señales de alerta del cáncer. Si experimentas 
@@ -214,7 +206,9 @@ export default function InformacionCancerPage() {
             </motion.p>
             
             <motion.div 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="bg-red-50 border border-red-200 rounded-xl p-6"
             >
               <div className="flex items-center gap-3 mb-4">
@@ -241,21 +235,24 @@ export default function InformacionCancerPage() {
       <section className="py-16 px-4 bg-gradient-to-r from-green-50 to-blue-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center"
           >
             <motion.h2 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-3xl md:text-4xl font-bold text-blue-900 mb-6"
             >
               Prevención del Cáncer
             </motion.h2>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-gray-600 max-w-3xl mx-auto mb-12"
             >
               Aunque no todos los cánceres se pueden prevenir, adoptar un estilo de vida 
@@ -263,7 +260,9 @@ export default function InformacionCancerPage() {
             </motion.p>
             
             <motion.div 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="grid md:grid-cols-3 gap-8"
             >
               <div className="bg-white p-6 rounded-xl shadow-lg">
@@ -322,20 +321,23 @@ export default function InformacionCancerPage() {
       <section className="py-16 px-4 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={containerVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h2 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-3xl md:text-4xl font-bold mb-6"
             >
               ¿Tienes Dudas sobre el Cáncer?
             </motion.h2>
             
             <motion.p 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="text-blue-100 mb-8 text-lg"
             >
               Nuestro equipo de especialistas está disponible para responder tus preguntas 
@@ -343,7 +345,9 @@ export default function InformacionCancerPage() {
             </motion.p>
             
             <motion.div 
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
               <a

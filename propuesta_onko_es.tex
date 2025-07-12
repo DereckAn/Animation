@@ -10,6 +10,7 @@
 \usepackage{tabularx}
 \usepackage{amsmath}
 \usepackage{booktabs}
+\usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{hyperref}
 
@@ -17,9 +18,10 @@
 \geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
 
 % Colores personalizados
-\definecolor{azulmedico}{RGB}{30, 64, 175}
-\definecolor{azulclaro}{RGB}{59, 130, 246}
+\definecolor{azulmedico}{RGB}{80, 175, 198}
+\definecolor{azulclaro}{RGB}{13, 153, 172}
 \definecolor{grisclaro}{RGB}{156, 163, 175}
+\definecolor{verdeclaro}{RGB}{144, 238, 144} % Verde claro para complementar
 
 % Configuración del encabezado y pie de página
 \pagestyle{fancy}
@@ -36,6 +38,22 @@
     linkcolor=azulmedico,
     urlcolor=azulclaro,
     citecolor=azulmedico
+}
+
+% Comando para agregar bordes decorativos en cada página
+\AddToHook{shipout/background}{%
+    \begin{tikzpicture}[remember picture, overlay]
+        % Borde izquierdo (azul claro)
+        \fill[azulclaro, opacity=0.3] (current page.west) rectangle ++(0.5cm, \paperheight);
+        % Borde superior (verde claro)
+        \fill[verdeclaro, opacity=0.3] (current page.north west) rectangle ++(\paperwidth, -0.5cm);
+        % Borde inferior (azul claro)
+        \fill[azulclaro, opacity=0.3] (current page.south west) rectangle ++(6cm, 0.5cm);
+        % Borde derecho (verde claro)
+        \fill[verdeclaro, opacity=0.3] (current page.south east) rectangle ++(-0.5cm, \paperheight);
+        % Logo o decoración en la esquina inferior (opcional, similar a la "V" en la imagen)
+        % \node at (current page.south) [below right, xshift=1cm, yshift=1cm] {\textcolor{azulmedico}{\Huge $\blacktriangle$}};
+    \end{tikzpicture}%
 }
 
 \begin{document}
@@ -390,6 +408,31 @@ Esta propuesta representa una solución integral para establecer la presencia di
 El desarrollo utilizará las mejores prácticas actuales en desarrollo web, garantizando productos finales de alta calidad, seguros y escalables. La implementación de animaciones profesionales y diseños responsivos asegurarán experiencias de usuario excepcionales en todos los dispositivos.
 
 Esperamos poder colaborar en estos proyectos y crear plataformas digitales que reflejen la excelencia de los servicios oncológicos de ONKO-ES y sus servicios complementarios.
+
+\section{Aceptación de la Propuesta}
+
+Al firmar a continuación, ambas partes aceptan los términos y condiciones descritos en esta propuesta. El pago inicial confirma el comienzo del proyecto según el cronograma establecido.
+
+\vspace{3cm}
+
+\begin{tabularx}{\textwidth}{X X}
+    % Columna del Desarrollador
+    \begin{center}
+        \hrulefill \\
+        \vspace{0.2cm}
+        \textbf{Dereck Angeles} \\
+        \textit{Desarrollador Web Full-Stack} \\[1.5cm]
+        \textbf{Fecha:} \underline{\hspace{4cm}}
+    \end{center} &
+    % Columna del Cliente
+    \begin{center}
+        \hrulefill \\
+        \vspace{0.2cm}
+        \textbf{Representante de ONKO-ES} \\
+        \textit{Nombre y Cargo} \\[1.5cm]
+        \textbf{Fecha:} \underline{\hspace{4cm}}
+    \end{center} \\
+\end{tabularx}
 
 \vspace{2cm}
 
