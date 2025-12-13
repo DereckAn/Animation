@@ -1,0 +1,394 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+% Configuración de la página
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+% Colores personalizados para farmacia
+\definecolor{verdefarmacia}{RGB}{34, 139, 34}
+\definecolor{verdeclaro}{RGB}{144, 238, 144}
+\definecolor{azulclaro}{RGB}{13, 153, 172}
+\definecolor{grisclaro}{RGB}{156, 163, 175}
+
+% Configuración del encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{verdefarmacia}{\textbf{Propuesta de Desarrollo Web}}}
+\fancyhead[R]{\textcolor{verdefarmacia}{\textbf{Farmacia Alleviare}}}
+\fancyfoot[C]{\textcolor{grisclaro}{\thepage}}
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{verdefarmacia}\leaders\hrule height \headrulewidth\hfill}}
+
+% Configuración de enlaces
+\hypersetup{
+    colorlinks=true,
+    linkcolor=verdefarmacia,
+    urlcolor=azulclaro,
+    citecolor=verdefarmacia
+}
+
+% Comando para agregar bordes decorativos en cada página
+\AddToHook{shipout/background}{%
+    \begin{tikzpicture}[remember picture, overlay]
+        % Borde izquierdo (verde farmacia)
+        \fill[verdefarmacia, opacity=0.3] (current page.west) rectangle ++(0.5cm, \paperheight);
+        % Borde superior (verde claro)
+        \fill[verdeclaro, opacity=0.3] (current page.north west) rectangle ++(\paperwidth, -0.5cm);
+        % Borde inferior (verde farmacia)
+        \fill[verdefarmacia, opacity=0.3] (current page.south west) rectangle ++(6cm, 0.5cm);
+        % Borde derecho (verde claro)
+        \fill[verdeclaro, opacity=0.3] (current page.south east) rectangle ++(-0.5cm, \paperheight);
+    \end{tikzpicture}%
+}
+
+\begin{document}
+
+% Página de título
+\begin{titlepage}
+    \centering
+    \vspace*{1.5cm}
+    
+    % Decoración superior
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[verdefarmacia] (current page.north west) rectangle ([yshift=-3cm]current page.north east);
+        \node[white,font=\Large\bfseries] at ([yshift=-1.5cm]current page.north) {PROPUESTA DE SITIO WEB};
+    \end{tikzpicture}
+    
+    \vspace{2cm}
+    
+    % Título principal
+    {\Huge\textbf{\textcolor{verdefarmacia}{DESARROLLO WEB}}}
+    
+    \vspace{0.5cm}
+    
+    {\LARGE\textbf{\textcolor{verdeclaro}{Sitio Web Profesional para Farmacia Alleviare}}}
+    
+    \vspace{0.3cm}
+    
+    {\large\textit{Plataforma Digital para Farmacia Especializada}}
+    
+    \vspace{0.5cm}
+    
+    % Línea decorativa
+    \textcolor{verdeclaro}{\rule{0.8\textwidth}{2pt}}
+    
+    \vspace{2cm}
+    
+    % Información del cliente
+    \begin{tabularx}{\textwidth}{Xr}
+        \textbf{\large Cliente:} & \textbf{\large Farmacia Alleviare} \\
+        \textbf{Especialidad:} & Farmacia con Medicamentos Oncológicos \\
+        \textbf{Ubicación:} & Ciudad Guzmán, Jalisco, México \\
+    \end{tabularx}
+    
+    \vspace{2cm}
+    
+    % Información del desarrollador con fondo
+    \begin{center}
+    \fcolorbox{verdefarmacia}{green!5}{\begin{minipage}{0.8\textwidth}
+        \centering
+        \vspace{0.5cm}
+        \textbf{\large\textcolor{verdefarmacia}{Desarrollador:}} \textbf{\large Dereck Angeles}
+        
+        \vspace{0.3cm}
+        
+        \begin{tabular}{ll}
+            \textbf{Teléfono:} & +1 (801) 472-3664 \\
+            \textbf{Email:} & dereck1998angeles@gmail.com \\
+            \textbf{Portafolio:} & \url{https://dereckan.com/} \\
+        \end{tabular}
+        
+        \vspace{0.5cm}
+    \end{minipage}}
+    \end{center}
+    
+    \vspace{2cm}
+    
+    {\large\textcolor{grisclaro}{\today}}
+    
+\end{titlepage}
+
+\newpage
+
+% Resumen ejecutivo
+\section{Resumen Ejecutivo}
+
+Esta propuesta presenta el desarrollo de una plataforma web profesional para \textbf{Farmacia Alleviare}, la única farmacia en Ciudad Guzmán que cuenta con medicamentos especializados para tratamientos oncológicos y servicios médicos integrados. El sitio web será diseñado para establecer una presencia digital sólida y comunicar la especialización única de la farmacia en la región.
+
+La plataforma destacará los servicios especializados, medicamentos oncológicos únicos, servicios de rehabilitación, consultas médicas y la ubicación estratégica en Ciudad Guzmán. El desarrollo utilizará tecnologías modernas para garantizar una experiencia de usuario profesional y confiable.
+
+\section{Descripción del Proyecto}
+
+\subsection{Objetivo Principal}
+Crear una plataforma web moderna que posicione a Farmacia Alleviare como la referencia en medicamentos oncológicos especializados en Ciudad Guzmán, destacando sus servicios médicos integrados y su expertise en medicina del dolor y cuidados paliativos.
+
+\subsection{Características Principales}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Diseño Farmacéutico Profesional:} Identidad visual apropiada para el sector farmacéutico con colores verdes institucionales
+    \item \textbf{Navegación Intuitiva:} Estructura clara que facilite encontrar información sobre medicamentos y servicios
+    \item \textbf{Diseño Responsivo:} Adaptación perfecta a todos los dispositivos
+    \item \textbf{Información Especializada:} Secciones dedicadas a medicamentos oncológicos y servicios médicos
+    \item \textbf{Ubicación Destacada:} Información clara sobre la localización en Ciudad Guzmán
+\end{itemize}
+
+\section{Estructura del Sitio Web}
+
+\subsection{Páginas Principales}
+
+\subsubsection{Página de Inicio}
+\begin{itemize}
+    \item Hero section destacando la especialización en medicamentos oncológicos
+    \item Servicios principales con iconografía farmacéutica
+    \item Diferenciadores únicos en Ciudad Guzmán
+    \item Información de contacto y ubicación prominente
+\end{itemize}
+
+\subsubsection{Medicamentos Especializados}
+\begin{itemize}
+    \item \textbf{Medicamentos Oncológicos:} Única farmacia en Ciudad Guzmán con este inventario
+    \item \textbf{Medicamentos para el Dolor:} Especialización en medicina del dolor
+    \item \textbf{Cuidados Paliativos:} Medicamentos para atención integral
+    \item \textbf{Disponibilidad:} Información sobre stock y pedidos especiales
+\end{itemize}
+
+\subsubsection{Servicios Médicos Integrados}
+\begin{itemize}
+    \item \textbf{Servicios de Rehabilitación:} Programas de recuperación
+    \item \textbf{Atención Oncológica:} Apoyo especializado para pacientes con cáncer
+    \item \textbf{Consultas de Psicología:} Apoyo emocional y psicológico
+    \item \textbf{Consultas de Nutrición:} Asesoría nutricional especializada
+\end{itemize}
+
+\subsubsection{Especialidades Médicas}
+\begin{itemize}
+    \item \textbf{Medicina del Dolor:} Tratamiento especializado para manejo del dolor
+    \item \textbf{Cuidados Paliativos:} Atención integral para pacientes en etapas avanzadas
+    \item \textbf{Oncología:} Apoyo farmacéutico especializado en cáncer
+\end{itemize}
+
+\subsubsection{Ubicación y Contacto}
+\begin{itemize}
+    \item Dirección completa en Ciudad Guzmán
+    \item Horarios de atención
+    \item Información de estacionamiento
+    \item Múltiples canales de contacto
+    \item Formulario de consultas
+\end{itemize}
+
+\section{Especificaciones Técnicas}
+
+\subsection{Tecnologías de Desarrollo}
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\textbf{Tecnología} & \textbf{Descripción} \\
+\hline
+\textbf{Next.js 15} & Framework de React para aplicaciones web modernas \\
+\hline
+\textbf{TypeScript} & Lenguaje tipado para mayor seguridad del código \\
+\hline
+\textbf{Tailwind CSS} & Framework CSS para diseño responsivo \\
+\hline
+\textbf{Framer Motion} & Animaciones suaves y profesionales \\
+\hline
+\textbf{Lucide Icons} & Iconografía farmacéutica y médica \\
+\hline
+\textbf{Responsive Design} & Adaptación a todos los dispositivos \\
+\hline
+\end{tabularx}
+\caption{Stack tecnológico del proyecto}
+\end{table}
+
+\subsection{Funcionalidades}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{SEO Local:} Optimización para búsquedas en Ciudad Guzmán
+    \item \textbf{Rendimiento:} Carga rápida y navegación fluida
+    \item \textbf{Accesibilidad:} Cumplimiento de estándares web
+    \item \textbf{Seguridad:} Implementación de mejores prácticas
+\end{itemize}
+
+\section{Hosting y Dominio}
+
+\subsection{Dominio}
+El sitio web utilizará un dominio profesional relacionado con \textbf{Farmacia Alleviare}, estableciendo una identidad digital clara para los pacientes de Ciudad Guzmán.
+
+\subsection{Hosting y Infraestructura}
+\begin{itemize}
+    \item \textbf{Plataforma:} Vercel - Hosting premium
+    \item \textbf{Características:}
+    \begin{itemize}
+        \item Certificado SSL incluido
+        \item CDN para carga rápida
+        \item Backup automático
+        \item Monitoreo continuo
+    \end{itemize}
+    \item \textbf{Rendimiento:} Tiempos de carga optimizados
+    \item \textbf{Disponibilidad:} Alta disponibilidad garantizada
+\end{itemize}
+
+\section{Cronograma de Desarrollo}
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+\textbf{Fase} & \textbf{Actividades} & \textbf{Duración} \\
+\hline
+\textbf{Fase 1} & Diseño y wireframes farmacéuticos & 1 semana \\
+\hline
+\textbf{Fase 2} & Desarrollo y programación & 2-3 semanas \\
+\hline
+\textbf{Fase 3} & Integración de contenido & 1 semana \\
+\hline
+\textbf{Fase 4} & Testing y deployment & 1 semana \\
+\hline
+\textbf{Total} & \textbf{Tiempo estimado de entrega} & \textbf{5-6 semanas} \\
+\hline
+\end{tabularx}
+\caption{Cronograma de desarrollo del proyecto}
+\end{table}
+
+\section{Inversión y Condiciones}
+
+\subsection{Inversión Total}
+\begin{itemize}
+    \item \textbf{Costo de Desarrollo:} \$107 USD
+    \item \textbf{Incluye:}
+    \begin{itemize}
+        \item Diseño y desarrollo completo
+        \item Implementación responsive
+        \item Optimización SEO local
+        \item Configuración de hosting
+        \item Conexión de dominio
+    \end{itemize}
+\end{itemize}
+
+\subsection{Condiciones de Pago}
+\begin{itemize}
+    \item \textbf{Modalidad:} Pago único al inicio del proyecto
+    \item \textbf{Tiempo de Entrega:} 5-6 semanas posteriores al pago
+\end{itemize}
+
+\section{Consideraciones Importantes}
+
+\subsection{Personalización}
+Durante el desarrollo se realizarán ajustes específicos para Farmacia Alleviare:
+
+\begin{itemize}
+    \item Adaptación a la identidad visual de la farmacia
+    \item Optimización para búsquedas locales en Ciudad Guzmán
+    \item Integración del inventario especializado
+    \item Destacar servicios únicos en la región
+\end{itemize}
+
+\subsection{Contenido}
+\begin{itemize}
+    \item El cliente proporcionará información específica de medicamentos
+    \item Se incluirá el logo oficial de Alleviare
+    \item Fotografías del establecimiento serán proporcionadas
+    \item Se utilizarán imágenes farmacéuticas profesionales
+\end{itemize}
+
+\section{Valor Diferencial}
+
+\subsection{Posicionamiento Único}
+Este sitio web posicionará a Farmacia Alleviare como:
+
+\begin{itemize}
+    \item \textbf{La única farmacia} en Ciudad Guzmán con medicamentos oncológicos especializados
+    \item \textbf{Centro integral} que combina farmacia y servicios médicos
+    \item \textbf{Referencia regional} en medicina del dolor y cuidados paliativos
+    \item \textbf{Apoyo especializado} para pacientes de ONKO-ES en la región
+\end{itemize}
+
+\section{Información de Contacto}
+
+\begin{center}
+\begin{tabularx}{0.8\textwidth}{|l|X|}
+\hline
+\textbf{Desarrollador} & \textbf{Dereck Angeles} \\
+\hline
+\textbf{Teléfono} & +1 (801) 472-3664 \\
+\hline
+\textbf{Email} & dereck1998angeles@gmail.com \\
+\hline
+\textbf{Portafolio} & \url{https://dereckan.com/} \\
+\hline
+\textbf{Especialidad} & Desarrollo Web Full-Stack \\
+\hline
+\textbf{Experiencia} & Sitios web profesionales y especializados \\
+\hline
+\end{tabularx}
+\end{center}
+
+\section{Conclusión}
+
+Esta propuesta representa una solución específica para establecer la presencia digital de Farmacia Alleviare como la farmacia especializada líder en Ciudad Guzmán. El sitio web destacará su inventario único de medicamentos oncológicos y servicios médicos integrados, posicionándola como un recurso esencial para pacientes en la región.
+
+El desarrollo se enfocará en crear una plataforma confiable y profesional que refleje la calidad y especialización de los servicios farmacéuticos y médicos de Alleviare.
+
+\section{Aceptación de la Propuesta}
+
+Al firmar a continuación, ambas partes aceptan los términos y condiciones descritos en esta propuesta. El pago inicial confirma el comienzo del proyecto según el cronograma establecido.
+
+\vspace{3cm}
+
+\begin{tabularx}{\textwidth}{X X}
+    % Columna del Desarrollador
+    \begin{center}
+        \hrulefill \\
+        \vspace{0.2cm}
+        \textbf{Dereck Angeles} \\
+        \textit{Desarrollador Web Full-Stack} \\[1.5cm]
+        \textbf{Fecha:} \underline{\hspace{4cm}}
+    \end{center} &
+    % Columna del Cliente
+    \begin{center}
+        \hrulefill \\
+        \vspace{0.2cm}
+        \textbf{Representante de Farmacia Alleviare} \\
+        \textit{Nombre y Cargo} \\[1.5cm]
+        \textbf{Fecha:} \underline{\hspace{4cm}}
+    \end{center} \\
+\end{tabularx}
+
+\vspace{2cm}
+
+\begin{center}
+\fcolorbox{verdefarmacia}{green!5}{\begin{minipage}{0.8\textwidth}
+    \centering
+    \vspace{0.5cm}
+    \textbf{\large Gracias por su confianza}
+    
+    \vspace{0.5cm}
+    
+    \textbf{Dereck Angeles}\\
+    \textit{Desarrollador Web Full-Stack}\\
+    \textcolor{azulclaro}{dereck1998angeles@gmail.com}
+    
+    \vspace{0.3cm}
+    
+    \textcolor{grisclaro}{\small Comprometido con la excelencia de tu sitio web}
+    
+    \vspace{0.5cm}
+\end{minipage}}
+\end{center}
+
+\end{document}

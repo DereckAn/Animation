@@ -1,0 +1,420 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+% Configuración de la página
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+% Colores personalizados
+\definecolor{azulmedico}{RGB}{80, 175, 198}
+\definecolor{azulclaro}{RGB}{13, 153, 172}
+\definecolor{grisclaro}{RGB}{156, 163, 175}
+\definecolor{verdeclaro}{RGB}{144, 238, 144} % Verde claro para complementar
+
+% Configuración del encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{azulmedico}{\textbf{Propuesta de Desarrollo Web}}}
+\fancyhead[R]{\textcolor{azulmedico}{\textbf{ONKO-ES}}}
+\fancyfoot[C]{\textcolor{grisclaro}{\thepage}}
+\renewcommand{\headrulewidth}{1.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{azulmedico}\leaders\hrule height \headrulewidth\hfill}}
+
+% Configuración de enlaces
+\hypersetup{
+    colorlinks=true,
+    linkcolor=azulmedico,
+    urlcolor=azulclaro,
+    citecolor=azulmedico
+}
+
+% Comando para agregar bordes decorativos en cada página
+\AddToHook{shipout/background}{%
+    \begin{tikzpicture}[remember picture, overlay]
+        % Borde izquierdo (azul claro)
+        \fill[azulclaro, opacity=0.3] (current page.west) rectangle ++(0.5cm, \paperheight);
+        % Borde superior (verde claro)
+        \fill[verdeclaro, opacity=0.3] (current page.north west) rectangle ++(\paperwidth, -0.5cm);
+        % Borde inferior (azul claro)
+        \fill[azulclaro, opacity=0.3] (current page.south west) rectangle ++(6cm, 0.5cm);
+        % Borde derecho (verde claro)
+        \fill[verdeclaro, opacity=0.3] (current page.south east) rectangle ++(-0.5cm, \paperheight);
+    \end{tikzpicture}%
+}
+
+\begin{document}
+
+% Página de título
+\begin{titlepage}
+    \centering
+    \vspace*{1.5cm}
+    
+    % Decoración superior
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[azulmedico] (current page.north west) rectangle ([yshift=-3cm]current page.north east);
+        \node[white,font=\Large\bfseries] at ([yshift=-1.5cm]current page.north) {PROPUESTA DE SITIO WEB};
+    \end{tikzpicture}
+    
+    \vspace{2cm}
+    
+    % Título principal
+    {\Huge\textbf{\textcolor{azulmedico}{DESARROLLO WEB}}}
+    
+    \vspace{0.5cm}
+    
+    {\LARGE\textbf{\textcolor{azulclaro}{Sitio Web Profesional para ONKO-ES}}}
+    
+    \vspace{0.3cm}
+    
+    {\large\textit{Plataforma Digital para Servicios de Oncología Especializada}}
+    
+    \vspace{0.5cm}
+    
+    % Línea decorativa
+    \textcolor{azulclaro}{\rule{0.8\textwidth}{2pt}}
+    
+    \vspace{2cm}
+    
+    % Información del cliente
+    \begin{tabularx}{\textwidth}{Xr}
+        \textbf{\large Cliente:} & \textbf{\large ONKO-ES} \\
+        \textbf{Especialidad:} & Oncología Médica \\
+        \textbf{Ubicación:} & Guadalajara, Jalisco, México \\
+    \end{tabularx}
+    
+    \vspace{2cm}
+    
+    % Información del desarrollador con fondo
+    \begin{center}
+    \fcolorbox{azulmedico}{blue!5}{\begin{minipage}{0.8\textwidth}
+        \centering
+        \vspace{0.5cm}
+        \textbf{\large\textcolor{azulmedico}{Desarrollador:}} \textbf{\large Dereck Angeles}
+        
+        \vspace{0.3cm}
+        
+        \begin{tabular}{ll}
+            \textbf{Teléfono:} & +1 (801) 472-3664 \\
+            \textbf{Email:} & dereck1998angeles@gmail.com \\
+            \textbf{Portafolio:} & \url{https://dereckan.com/} \\
+        \end{tabular}
+        
+        \vspace{0.5cm}
+    \end{minipage}}
+    \end{center}
+    
+    \vspace{2cm}
+    
+    {\large\textcolor{grisclaro}{\today}}
+    
+\end{titlepage}
+
+\newpage
+
+% Resumen ejecutivo
+\section{Resumen Ejecutivo}
+
+Esta propuesta presenta el desarrollo de una plataforma web profesional para \textbf{ONKO-ES}, centro especializado en oncología médica ubicado en Guadalajara, Jalisco. El sitio web será diseñado y desarrollado para establecer una presencia digital sólida, mejorar la comunicación con pacientes y posicionar a la clínica como líder en servicios oncológicos especializados.
+
+La plataforma incluirá navegación intuitiva con sidebar animado, información detallada sobre servicios médicos, perfiles del equipo profesional, sistema de contacto y recursos educativos sobre el cáncer. El desarrollo utilizará tecnologías modernas para garantizar rendimiento óptimo, seguridad y escalabilidad.
+
+\section{Descripción del Proyecto}
+
+\subsection{Objetivo Principal}
+Crear una plataforma web moderna y profesional que refleje la calidad y experiencia de los servicios oncológicos de ONKO-ES, facilitando la comunicación entre pacientes y especialistas mientras proporciona información valiosa sobre tratamientos y prevención del cáncer.
+
+\subsection{Características Principales}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Navegación Lateral Animada:} Sidebar interactivo con animaciones suaves que se despliega al hacer clic, optimizando el espacio visual
+    \item \textbf{Diseño Responsivo:} Adaptación perfecta a dispositivos móviles, tablets y computadoras de escritorio
+    \item \textbf{Animaciones Profesionales:} Transiciones suaves y efectos visuales que mejoran la experiencia del usuario
+    \item \textbf{Identidad Visual Médica:} Paleta de colores azules profesionales apropiada para el sector salud
+    \item \textbf{Carga Optimizada:} Tiempos de carga rápidos y rendimiento superior
+\end{itemize}
+
+\section{Estructura del Sitio Web}
+
+\subsection{Páginas Principales}
+
+\subsubsection{Página de Inicio}
+\begin{itemize}
+    \item Hero section con logo institucional y mensaje principal
+    \item Servicios destacados con iconografía médica
+    \item Estadísticas de experiencia y pacientes atendidos
+    \item Llamadas a la acción para agendar citas
+\end{itemize}
+
+\subsubsection{Servicios Médicos}
+\begin{itemize}
+    \item \textbf{Oncología Médica:} Quimioterapia, inmunoterapia, terapias dirigidas
+    \item \textbf{Cirugía Oncológica:} Procedimientos especializados (mama, tiroides, cervical, ovario)
+    \item \textbf{Radio-Oncología:} Radioterapia de alta precisión
+    \item \textbf{Biopsias:} Diagnósticos especializados
+    \item \textbf{Clínica de Linfomas:} Atención hematológica especializada
+    \item \textbf{Servicios Adicionales:} Revisión de estudios, atención domiciliaria, prevención
+\end{itemize}
+
+\subsubsection{Equipo Médico}
+\begin{itemize}
+    \item Perfiles profesionales de especialistas
+    \item Formación académica y certificaciones
+    \item Áreas de especialización
+    \item Años de experiencia
+\end{itemize}
+
+\subsubsection{Ubicaciones}
+\begin{itemize}
+    \item \textbf{Ocho ubicaciones estratégicas:}
+    \begin{itemize}
+        \item Hospital San Vicente - Ciudad Guzmán
+        \item Onkimia - Guadalajara
+        \item Clínica Córdoba - Colima
+        \item Clínica Progreso - Guadalajara
+        \item Hospital San Javier - Guadalajara
+        \item Clínica de Radioterapia de Occidente - Guadalajara
+        \item Asís Núcleo Médico - Tala
+        \item Hospital París - Etzatlán
+    \end{itemize}
+    \item Direcciones completas y información detallada
+    \item Horarios de atención específicos por ubicación
+    \item Información de estacionamiento y transporte público
+    \item Servicios disponibles por ubicación
+\end{itemize}
+
+\subsubsection{Información sobre el Cáncer}
+\begin{itemize}
+    \item Tipos comunes de cáncer y sus síntomas
+    \item Medidas de prevención
+    \item Señales de alerta
+    \item Recursos educativos
+\end{itemize}
+
+\subsubsection{Contacto}
+\begin{itemize}
+    \item Múltiples canales de comunicación
+    \item Formulario de contacto interactivo
+    \item Información de emergencias 24/7
+    \item Enlaces a WhatsApp y teléfono
+\end{itemize}
+
+\section{Especificaciones Técnicas}
+
+\subsection{Tecnologías de Desarrollo}
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\textbf{Tecnología} & \textbf{Descripción} \\
+\hline
+\textbf{Next.js 15} & Framework de React para aplicaciones web modernas con App Router \\
+\hline
+\textbf{TypeScript} & Lenguaje de programación tipado para mayor seguridad y mantenibilidad \\
+\hline
+\textbf{Tailwind CSS} & Framework CSS utility-first para diseño responsivo y personalizable \\
+\hline
+\textbf{Framer Motion} & Librería de animaciones para crear transiciones suaves y profesionales \\
+\hline
+\textbf{Lucide Icons} & Iconografía médica y profesional \\
+\hline
+\textbf{Responsive Design} & Adaptación automática a todos los dispositivos \\
+\hline
+\end{tabularx}
+\caption{Stack tecnológico del proyecto}
+\end{table}
+
+\subsection{Funcionalidades Avanzadas}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{SEO Optimizado:} Metadata personalizada para mejor posicionamiento en buscadores
+    \item \textbf{Rendimiento Superior:} Optimización de imágenes y carga lazy loading
+    \item \textbf{Accesibilidad:} Cumplimiento de estándares WCAG para usuarios con discapacidades
+    \item \textbf{Seguridad:} Implementación de mejores prácticas de seguridad web
+\end{itemize}
+
+\section{Hosting y Dominio}
+
+\subsection{Dominio}
+El sitio web utilizará el dominio \textbf{ONKO-ES}, estableciendo una identidad digital profesional y fácil de recordar para los pacientes.
+
+\subsection{Hosting y Infraestructura}
+\begin{itemize}
+    \item \textbf{Plataforma:} Vercel - Hosting premium para aplicaciones Next.js
+    \item \textbf{Características:}
+    \begin{itemize}
+        \item Certificado SSL gratuito
+        \item CDN global para carga rápida
+        \item Backup automático
+        \item Monitoreo 24/7
+        \item Escalabilidad automática
+    \end{itemize}
+    \item \textbf{Rendimiento:} Tiempos de carga inferiores a 2 segundos
+    \item \textbf{Disponibilidad:} 99.9\% uptime garantizado
+\end{itemize}
+
+\section{Desarrollo Futuro}
+
+\subsection{Sistema de Gestión de Contenido (CMS)}
+En fases posteriores del proyecto, se implementará \textbf{TinaCMS}, un sistema de gestión de contenido moderno que permitirá:
+
+\begin{itemize}
+    \item Edición visual en tiempo real
+    \item Actualización de contenido sin conocimientos técnicos
+    \item Gestión de noticias y artículos médicos
+    \item Administración de testimonios de pacientes
+    \item Control de horarios y disponibilidad
+\end{itemize}
+
+\section{Cronograma de Desarrollo}
+
+\begin{table}[h]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|l|}
+\hline
+\textbf{Fase} & \textbf{Actividades} & \textbf{Duración} \\
+\hline
+\textbf{Fase 1} & Diseño UI/UX y wireframes & 1-2 semanas \\
+\hline
+\textbf{Fase 2} & Desarrollo frontend y backend & 3-4 semanas \\
+\hline
+\textbf{Fase 3} & Integración de contenido y testing & 1-2 semanas \\
+\hline
+\textbf{Fase 4} & Optimización y deployment & 1 semana \\
+\hline
+\textbf{Total} & \textbf{Tiempo estimado de entrega} & \textbf{6-8 semanas} \\
+\hline
+\end{tabularx}
+\caption{Cronograma de desarrollo del proyecto}
+\end{table}
+
+\section{Inversión y Condiciones}
+
+\subsection{Inversión Total}
+\begin{itemize}
+    \item \textbf{Costo de Desarrollo:} \$550 USD
+    \item \textbf{Incluye:}
+    \begin{itemize}
+        \item Diseño y desarrollo completo
+        \item Implementación responsive
+        \item Optimización SEO básica
+        \item Configuración de hosting
+        \item Conexión de dominio
+    \end{itemize}
+\end{itemize}
+
+\subsection{Condiciones de Pago}
+\begin{itemize}
+    \item \textbf{Modalidad:} Pago único al inicio del proyecto
+    \item \textbf{Tiempo de Entrega:} 6-8 semanas posteriores al pago
+\end{itemize}
+
+\section{Consideraciones Importantes}
+
+\subsection{Personalización y Ajustes}
+Durante el proceso de desarrollo, se realizarán ajustes y modificaciones según las necesidades específicas de ONKO-ES. Esto incluye:
+
+\begin{itemize}
+    \item Refinamiento de la paleta de colores
+    \item Ajustes en la disposición de elementos
+    \item Optimización de textos y contenido
+    \item Incorporación de feedback del cliente
+    \item Adaptación a la identidad visual existente
+\end{itemize}
+
+\subsection{Contenido}
+\begin{itemize}
+    \item El cliente proporcionará todo el contenido textual final
+    \item Se incluirá integración del logo oficial de ONKO-ES
+    \item Las imágenes profesionales serán proporcionadas por el cliente
+    \item Se utilizarán imágenes stock médicas profesionales cuando sea necesario
+\end{itemize}
+
+\section{Información de Contacto}
+
+\begin{center}
+\begin{tabularx}{0.8\textwidth}{|l|X|}
+\hline
+\textbf{Desarrollador} & \textbf{Dereck Angeles} \\
+\hline
+\textbf{Teléfono} & +1 (801) 472-3664 \\
+\hline
+\textbf{Email} & dereck1998angeles@gmail.com \\
+\hline
+\textbf{Portafolio} & \url{https://dereckan.com/} \\
+\hline
+\textbf{Especialidad} & Desarrollo Web Full-Stack \\
+\hline
+\textbf{Experiencia} & Aplicaciones web modernas y responsivas \\
+\hline
+\end{tabularx}
+\end{center}
+
+\section{Conclusión}
+
+Esta propuesta representa una solución integral para establecer la presencia digital de ONKO-ES. El sitio web combinará profesionalismo médico con tecnología moderna, creando una plataforma que no solo informa, sino que también inspira confianza en los pacientes.
+
+El desarrollo utilizará las mejores prácticas actuales en desarrollo web, garantizando un producto final de alta calidad, seguro y escalable. La implementación de animaciones profesionales y diseños responsivos asegurarán una experiencia de usuario excepcional en todos los dispositivos.
+
+Esperamos poder colaborar en este proyecto y crear una plataforma digital que refleje la excelencia de los servicios oncológicos de ONKO-ES.
+
+\section{Aceptación de la Propuesta}
+
+Al firmar a continuación, ambas partes aceptan los términos y condiciones descritos en esta propuesta. El pago inicial confirma el comienzo del proyecto según el cronograma establecido.
+
+\vspace{3cm}
+
+\begin{tabularx}{\textwidth}{X X}
+    % Columna del Desarrollador
+    \begin{center}
+        \hrulefill \\
+        \vspace{0.2cm}
+        \textbf{Dereck Angeles} \\
+        \textit{Desarrollador Web Full-Stack} \\[1.5cm]
+        \textbf{Fecha:} \underline{\hspace{4cm}}
+    \end{center} &
+    % Columna del Cliente
+    \begin{center}
+        \hrulefill \\
+        \vspace{0.2cm}
+        \textbf{Representante de ONKO-ES} \\
+        \textit{Nombre y Cargo} \\[1.5cm]
+        \textbf{Fecha:} \underline{\hspace{4cm}}
+    \end{center} \\
+\end{tabularx}
+
+\vspace{2cm}
+
+\begin{center}
+\fcolorbox{azulmedico}{blue!5}{\begin{minipage}{0.8\textwidth}
+    \centering
+    \vspace{0.5cm}
+    \textbf{\large Gracias por su confianza}
+    
+    \vspace{0.5cm}
+    
+    \textbf{Dereck Angeles}\\
+    \textit{Desarrollador Web Full-Stack}\\
+    \textcolor{azulclaro}{dereck1998angeles@gmail.com}
+    
+    \vspace{0.3cm}
+    
+    \textcolor{grisclaro}{\small Comprometido con la excelencia de tu sitio web}
+    
+    \vspace{0.5cm}
+\end{minipage}}
+\end{center}
+
+\end{document}
