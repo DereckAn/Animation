@@ -40,7 +40,7 @@ export const ServicesSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                  className="bg-linear-to-br from-blue-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                 >
                   <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                     <Icon className="w-8 h-8 text-blue-600" />
