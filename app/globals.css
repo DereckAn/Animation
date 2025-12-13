@@ -9,6 +9,8 @@
 }
 
 @theme {
+  --font-inter: "Inter", sans-serif;
+
   /* Neutrals */
   --color-black-200: #081e13;
   --color-black-100: #112c2e;
@@ -109,6 +111,11 @@
 
   --background: #fdfce7;
   --foreground: #081e13;
+}
+
+html,
+body {
+  overscroll-behavior: none;
 }
 
 body {

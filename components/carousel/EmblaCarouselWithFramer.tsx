@@ -85,21 +85,21 @@ const EmblaCarouselWithFramer: React.FC<PropType> = (props) => {
     inactive: {
       scale: 0.85,
       opacity: 0.6,
-      transition: { duration: 0.3, ease: "easeOut" },
+      transition: { duration: 0.3, ease: "easeOut" as const },
     },
     active: {
       scale: 1,
       opacity: 1,
       transition: {
         duration: 0.4,
-        ease: "easeOut",
+        ease: "easeOut" as const,
         delay: 0.1,
       },
     },
     transitioning: {
       scale: 0.85,
       opacity: 0.6,
-      transition: { duration: 0.2, ease: "easeIn" },
+      transition: { duration: 0.2, ease: "easeIn" as const },
     },
   };
 
