@@ -22,7 +22,7 @@ export const HeroSection = () => {
           We offer an easy solution for contract recruiting and HR solutions,
           finding and managing top talent, both locally and globally.
         </h2>
-        <button className="bg-green-700 ring-green-700 text-white px-4 py-1 rounded-full hover:bg-green-800 transition mr-5 inline-flex items-center gap-2 ">
+        <button className="bg-green-700 ring-green-700 text-white px-4 py-1 rounded-full hover:bg-green-800 transition mr-5 inline-flex items-center gap-5 ">
           <span className="">Contáctanos</span>
           <div className="rounded-full p-2 bg-white/10">
             <CalendarDays className="size-5" />
@@ -40,7 +40,7 @@ export const HeroSection = () => {
       >
         <path
           fill="#ffffff"
-          fill-opacity="1"
+          fillOpacity="1"
           d="M0,96L40,101.3C80,107,160,117,240,117.3C320,117,400,107,480,117.3C560,128,640,160,720,186.7C800,213,880,235,960,229.3C1040,224,1120,192,1200,186.7C1280,181,1360,203,1400,213.3L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
         ></path>
       </svg>
