@@ -6,7 +6,7 @@ import { services } from "../constants";
 
 export const ServicesSection = () => {
   return (
-    <section className="container mx-auto font-inter bg-white">
+    <section className="container mx-auto font-inter">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -17,13 +17,13 @@ export const ServicesSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-4xl md:text-7xl font-black text-center text-gray-800 leading-tight max-w-4xl mx-auto mb-16"
+          className="text-[#444] font-sans text-[42px] font-extrabold leading-11.5 text-center max-w-4xl mx-auto mb-16"
         >
           Servicios Oncológicos
         </motion.h2>
 
         {/* Grid de servicios con imágenes */}
-        <div className="grid md:grid-cols-4 gap-6 md:px-20 mb-16 ">
+        <div className="grid md:grid-cols-4 gap-6 md:px-32 mb-16 ">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -63,7 +63,7 @@ export const ServicesSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="text-gray-600 text-center max-w-3xl tracking-wider leading-tight font-extralight mx-auto text-lg mb-16"
+          className="text-gray-600 text-center max-w-3xl tracking-wider leading-tight font-extralight mx-auto text-lg mb-10"
         >
           Estamos listos para acompañarte en cada paso de tu tratamiento. Agenda
           una consulta gratuita para conocer cuál de nuestros servicios es el
@@ -79,7 +79,7 @@ export const ServicesSection = () => {
         >
           <Link
             href={""}
-            className="bg-green-700 ring-green-700 text-white px-4 py-1 rounded-full hover:bg-green-800 transition md:mr-3 inline-flex items-center gap-5 w-44 "
+            className="bg-green-700 text-sm ring-green-700 text-white px-4 py-1 rounded-full hover:bg-green-800 transition inline-flex items-center gap-5 w-44 "
           >
             <span className="">Contáctanos</span>
             <div className="rounded-full p-2 bg-white/10">
@@ -88,7 +88,7 @@ export const ServicesSection = () => {
           </Link>
           <Link
             href="/servicios"
-            className="ring-2 px-4 py-2 rounded-full hover:bg-green-800 hover:ring-green-800 hover:text-white transition duration-300 "
+            className="ring-2 text-sm px-4 py-2 rounded-full hover:bg-green-800 hover:ring-green-800 hover:text-white transition duration-300 "
           >
             Servicios
           </Link>

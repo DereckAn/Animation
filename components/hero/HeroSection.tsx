@@ -15,20 +15,20 @@ export const HeroSection = () => {
       </div>
 
       <div className="absolute z-10 text-white max-w-250 font-inter text-end space-y-6">
-        <h1 className="text-[60px] tracking-normal font-black">
+        <h1 className="text-[60px] tracking-normal leading-[1.1] font-black">
           Shaking Up Traditional Contract Recruiting and HR Solutions{" "}
         </h1>
-        <h2 className="tracking-wider font-light text-4xl">
+        <h2 className="tracking-wider font-light text-2xl">
           We offer an easy solution for contract recruiting and HR solutions,
           finding and managing top talent, both locally and globally.
         </h2>
-        <button className="bg-green-700 ring-green-700 text-white px-4 py-1 rounded-full hover:bg-green-800 transition mr-5 inline-flex items-center gap-5 ">
+        <button className="bg-green-700 text-sm ring-green-700 text-white px-4 py-1 rounded-full hover:bg-green-800 transition mr-5 inline-flex items-center gap-5 ">
           <span className="">Contáctanos</span>
           <div className="rounded-full p-2 bg-white/10">
             <CalendarDays className="size-5" />
           </div>
         </button>
-        <button className="ring-2 text-white px-4 py-2 rounded-full hover:bg-green-800 hover:ring-green-800 transition duration-300">
+        <button className="ring-2 text-sm text-white px-4 py-2 rounded-full hover:bg-green-800 hover:ring-green-800 transition duration-300">
           Conoce más
         </button>
       </div>

@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { CalendarDays } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 type Props = {};
 export const AboutSection = ({}: Props) => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4">
+      <div className="container mx-auto md:px-32">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Imagen con forma redondeada - Izquierda */}
           <motion.div
@@ -15,9 +16,9 @@ export const AboutSection = ({}: Props) => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative h-[500px] w-full rounded-[80px] overflow-hidden shadow-2xl bg-gradient-to-br from-blue-100 to-blue-50">
+            <div className="relative h-80 md:h-100 w-full rounded-tl-md rounded-tr-[110px] rounded-bl-[110px] rounded-br-md overflow-hidden shadow-2xl">
               {/* Placeholder - puedes reemplazar con tu imagen */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-200 to-green-100 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center p-8">
                   <div className="text-6xl mb-4">🏥</div>
                   <p className="text-gray-600 text-lg font-medium">
@@ -27,15 +28,13 @@ export const AboutSection = ({}: Props) => {
                   </p>
                 </div>
               </div>
-              {/* Descomenta esto cuando tengas tu imagen:
               <Image
-                src="/images/about-doctor.jpg"
+                src="/images/onkohero.webp"
                 alt="Equipo Onko.es"
                 layout="fill"
                 objectFit="cover"
                 className="object-cover"
               />
-              */}
             </div>
           </motion.div>
 
@@ -50,7 +49,7 @@ export const AboutSection = ({}: Props) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight"
+              className="text-[#444] font-sans text-4xl font-medium leading-10.5"
             >
               Comprometidos con tu Salud y Bienestar
             </motion.h2>
@@ -59,7 +58,7 @@ export const AboutSection = ({}: Props) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="text-gray-600 text-lg leading-relaxed"
+              className="text-[#676767] font-sans text-sm font-light tracking-[0.25px] leading-5.5"
             >
               Onko.es es un centro oncológico especializado e innovador dedicado
               al cuidado integral de pacientes con cáncer. Nuestro equipo
@@ -71,7 +70,7 @@ export const AboutSection = ({}: Props) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
-              className="text-gray-600 text-lg leading-relaxed"
+              className="text-[#676767] font-sans text-sm font-light tracking-[0.25px] leading-5.5"
             >
               Con más de 20 años de experiencia, nos esforzamos constantemente
               por mejorar nuestros procesos y metodologías. Contamos con
@@ -90,7 +89,7 @@ export const AboutSection = ({}: Props) => {
             >
               <Link
                 href="/contacto"
-                className="group bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-full hover:shadow-xl transition-all duration-300 hover:scale-105 inline-flex items-center gap-3"
+                className="bg-green-700 text-sm ring-green-700 text-white px-4 py-1 rounded-full hover:bg-green-800 transition  inline-flex items-center gap-5 "
               >
                 <span className="font-semibold">Consulta Gratuita</span>
                 <div className="rounded-full p-2 bg-white/20 group-hover:bg-white/30 transition-colors">
@@ -99,7 +98,7 @@ export const AboutSection = ({}: Props) => {
               </Link>
               <Link
                 href="/equipo"
-                className="px-6 py-3 bg-white text-gray-700 font-semibold rounded-full border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 hover:scale-105"
+                className="ring-2 text-sm hover:text-white px-4 py-2 rounded-full hover:bg-green-800 hover:ring-green-800 transition duration-300"
               >
                 Conocer Más
               </Link>
